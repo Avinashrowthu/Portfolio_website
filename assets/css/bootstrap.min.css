@@ -332,7 +332,9 @@ select:disabled {
 }
 
 [type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled) {
-    cursor: pointer
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 ::-moz-focus-inner {

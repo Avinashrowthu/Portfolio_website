@@ -912,6 +912,7 @@ html {
 }
 
 
+
 .fixed-header .main-menu .navbar-collapse li a:hover {
     color: var(--primary-color);
 }
@@ -2981,4 +2982,31 @@ ul.blog_pagination li a:hover {
     border-radius: 14px;
     padding: 25px;
     border: 1px solid var(--border-color);
+}
+
+
+
+/* Tech Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 16px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.para {
+    font-size: 16px;
+    padding: 0px 120px;
+    text-align: center;
 }
