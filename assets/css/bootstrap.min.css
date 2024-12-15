@@ -90,6 +90,7 @@ hr:not([size]) {
     .h2,h2 {
         font-size:2rem;
         color: white;
+        margin-bottom: 20px;
     }
 }
 
@@ -123,7 +124,7 @@ hr:not([size]) {
 
 p {
     margin-top: 0;
-    margin-bottom: 46px;
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.6;
     text-align: justify;
