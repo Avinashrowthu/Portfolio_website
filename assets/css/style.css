@@ -1654,7 +1654,7 @@ ul.extra-skills li i {
 }
 
 .single-project-page-left {
-    padding: 35px 40px 0px 40px;
+    padding: 35px 40px 25px 40px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     box-shadow: rgba(255, 255, 255, 0.025) 0px 0.362176px 0.651917px -1px inset, rgba(255, 255, 255, 0.036) 0px 3px 5.4px -2px inset;
@@ -1662,16 +1662,28 @@ ul.extra-skills li i {
 }
 
 .single-project-page-design {
-    padding-top: 200px;
+    padding-top: 140px;
+}
+
+.single-project-image{
+    text-align: center;
 }
 
 .single-project-image img {
-    width: 100%;
+    width: 85%;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    /* border-radius: 20px; */
+    box-shadow: rgba(255, 255, 255, 0.025) 0px 0.362176px 0.651917px -1px inset, rgba(255, 255, 255, 0.036) 0px 3px 5.4px -2px inset;
+    margin-bottom: 20px;
 }
 
 .single-info h3 {
     font-size: 20px;
     line-height: 35px;
+    color: white;
 }
 .single-image{
     margin-bottom: 30px;
