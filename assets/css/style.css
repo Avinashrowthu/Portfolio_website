@@ -1673,11 +1673,11 @@ ul.extra-skills li i {
     width: 85%;
     align-items: center;
     text-align: center;
-    border-radius: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.05);
+    /* border-radius: 20px; */
+    /* border: 2px solid rgba(0, 0, 0, 0.05); */
     /* border-radius: 20px; */
     box-shadow: rgba(255, 255, 255, 0.025) 0px 0.362176px 0.651917px -1px inset, rgba(255, 255, 255, 0.036) 0px 3px 5.4px -2px inset;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .single-info h3 {
@@ -1716,7 +1716,7 @@ ul.extra-skills li i {
 
 .project-content .sub-title {
     margin-bottom: 0;
-    color: rgb(119, 119, 125);
+    color: #8E92BC;
 }
 
 .project-content h2 {
@@ -1785,7 +1785,7 @@ ul.extra-skills li i {
 }
 
 .project-item.style-two .project-content h3 {
-    color: var(--subtitle-color);
+    color: #fff;
     font-size: 20px;
     display: block;
 }
@@ -1827,7 +1827,7 @@ ul.extra-skills li i {
     position: relative;
     margin: 0 20px 20px;
     padding-bottom: 15px;
-    color: rgb(119, 119, 125);
+    color: #8E92BC;
 }
 
 .filter-btns-one li:after {
