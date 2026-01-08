@@ -18,11 +18,11 @@ const Overview = () => {
                         transition={{ duration: 0.6 }}
                         className="text-left space-y-6"
                     >
-                        <h2 className="text-5xl md:text-6xl font-extrabold text-brand-dark leading-[1.1]">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-dark leading-[1.1]">
                             Design systems that scale with your <span className="text-brand-purple">ambition</span>.
                         </h2>
                         <p className="text-lg text-gray-500 leading-relaxed">
-                            I create robust design frameworks, not just screens. Every element is crafted to be reusable, accessible, and delightful.
+                            A selection of projects where I solved real problems through user-centered design, thoughtful UX decisions, and clean visual execution.
                         </p>
 
                         {/* Platform Icons / Tags */}
@@ -48,10 +48,10 @@ const Overview = () => {
                         whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                         viewport={{ once: true }}
                         transition={{ type: "spring", bounce: 0.4 }}
-                        className="relative h-[400px] bg-brand-gray rounded-[3rem] border border-gray-100/50 shadow-inner p-8 flex items-center justify-center overflow-hidden group"
+                        className="relative h-[320px] md:h-[400px] bg-brand-gray rounded-[2rem] md:rounded-[3rem] border border-gray-100/50 shadow-inner p-6 md:p-8 flex items-center justify-center overflow-hidden group"
                     >
                         {/* Abstract Floating UI Elements */}
-                        <div className="relative p-6 bg-white rounded-3xl shadow-xl w-64 rotate-6 group-hover:rotate-0 transition-transform duration-500 z-10 border border-gray-100">
+                        <div className="relative p-6 bg-white rounded-3xl shadow-xl w-52 md:w-64 rotate-6 group-hover:rotate-0 transition-transform duration-500 z-10 border border-gray-100">
                             <div className="flex gap-2 mb-4">
                                 <div className="w-8 h-8 rounded-full bg-brand-red/20" />
                                 <div className="w-32 h-8 rounded-full bg-gray-100" />

@@ -10,15 +10,15 @@ const Inside = () => {
                 </div>
 
                 {/* Big Gradient Card */}
-                <div className="relative w-full max-w-5xl mx-auto aspect-video rounded-[3rem] overflow-hidden shadow-2xl group cursor-pointer">
+                <div className="relative w-full max-w-5xl mx-auto aspect-video rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl group cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#A29BFE] via-[#74B9FF] to-[#FC6B00] opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
 
                     <div className="absolute inset-0 flex items-center justify-center">
 
                         {/* Play Button */}
                         <div className="relative">
-                            <div className="w-24 h-24 rounded-full border-2 border-white/40 border-dashed animate-[spin_10s_linear_infinite]" />
-                            <div className="absolute top-0 left-0 w-24 h-24 flex items-center justify-center">
+                            <div className="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white/40 border-dashed animate-[spin_10s_linear_infinite]" />
+                            <div className="absolute top-0 left-0 w-16 h-16 md:w-24 md:h-24 flex items-center justify-center">
                                 <div className="flex flex-col items-center">
                                     <Play fill="white" className="w-8 h-8 text-white translate-x-1" />
                                     <span className="text-white font-bold text-sm mt-1">Play</span>
@@ -28,8 +28,8 @@ const Inside = () => {
 
                     </div>
 
-                    <h2 className="absolute bottom-10 left-0 right-0 text-white text-3xl md:text-5xl font-bold drop-shadow-md">
-                        What Inside the File
+                    <h2 className="absolute bottom-6 left-0 right-0 text-white text-2xl md:text-5xl font-bold drop-shadow-md px-4">
+                        What's Inside the File
                     </h2>
                 </div>
             </div>

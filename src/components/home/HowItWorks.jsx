@@ -17,40 +17,35 @@ const HowItWorks = () => {
                             hidden: { opacity: 0 },
                             visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
                         }}
-                        className="relative z-10 flex flex-col items-start select-none"
+                        className="relative z-10 flex flex-col items-center select-none"
                     >
                         <motion.div
-                            variants={{ hidden: { x: -50, opacity: 0 }, visible: { x: 0, opacity: 1 } }}
-                            className="transform -rotate-[6deg] bg-brand-dark text-white px-8 py-4 rounded-2xl text-4xl md:text-5xl font-bold shadow-lg mb-4 hover:scale-105 transition-transform duration-300 border-2 border-brand-dark/5"
+                            variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                            className="transform -rotate-[6deg] bg-brand-orange text-white px-8 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl text-3xl sm:text-4xl md:text-6xl font-bold shadow-xl z-10 border-2 border-brand-orange"
                         >
-                            How to
+                            Lorem
                         </motion.div>
                         <motion.div
-                            variants={{ hidden: { x: -50, opacity: 0 }, visible: { x: 0, opacity: 1 } }}
-                            className="transform rotate-[2deg] bg-brand-yellow text-brand-dark px-10 py-5 rounded-2xl text-4xl md:text-5xl font-bold shadow-lg mb-4 ml-12 hover:scale-105 transition-transform duration-300 border-2 border-brand-dark/5"
+                            variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                            className="transform rotate-[6deg] bg-brand-yellow text-brand-dark px-10 py-4 md:px-12 md:py-5 rounded-xl md:rounded-2xl text-3xl sm:text-4xl md:text-6xl font-bold shadow-xl -mt-4 md:-mt-6 z-20 border-2 border-brand-yellow"
                         >
-                            start
+                            Ipsum
                         </motion.div>
                         <motion.div
-                            variants={{ hidden: { x: -50, opacity: 0 }, visible: { x: 0, opacity: 1 } }}
-                            className="relative transform -rotate-[-6deg] bg-brand-orange text-white px-8 py-4 rounded-2xl text-4xl md:text-5xl font-bold shadow-lg hover:scale-105 transition-transform duration-300"
+                            variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                            className="relative transform -rotate-[3deg] bg-brand-dark text-white px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl text-3xl sm:text-4xl md:text-6xl font-bold shadow-xl -mt-4 md:-mt-6 z-30 flex items-center gap-4"
                         >
-                            a Project?
+                            Dolor Sit
 
-                            {/* Star Icon */}
-                            <div className="absolute -top-6 -right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md animate-[spin_4s_linear_infinite]">
-                                <svg className="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor">
+                            {/* Star Icon - Badge Style */}
+                            <div className="absolute -right-16 top-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-[12deg]">
+                                <svg className="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
                                 </svg>
                             </div>
                         </motion.div>
 
-                        <motion.p
-                            variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                            className="mt-12 text-lg text-gray-500 max-w-md leading-relaxed"
-                        >
-                            It's simple. We define your goals, I craft the magic, and we launch something distinctive together.
-                        </motion.p>
+                        <motion.div className="h-20" /> {/* Spacer */}
                     </motion.div>
 
                     {/* Right: Gradient Video Card with Reveal */}
@@ -61,7 +56,7 @@ const HowItWorks = () => {
                         transition={{ duration: 0.7, type: "spring" }}
                         className="relative group cursor-pointer"
                     >
-                        <div className="aspect-square bg-gradient-to-br from-[#FDCB58] via-[#FC6B00] to-[#6C5CE7] rounded-[3rem] shadow-2xl flex items-center justify-center relative overflow-hidden transition-all duration-500 hover:shadow-brand-purple/50 hover:-translate-y-2">
+                        <div className="aspect-square bg-gradient-to-br from-[#6C5CE7] via-[#9B89F7] to-[#FD79A8] rounded-[3rem] shadow-2xl flex items-center justify-center relative overflow-hidden transition-all duration-500 hover:shadow-brand-purple/50 hover:-translate-y-2">
 
                             {/* Glass Overlay/Sheen */}
                             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -74,13 +69,15 @@ const HowItWorks = () => {
                                     <Play fill="white" className="w-8 h-8 text-white translate-x-1" />
                                 </div>
                                 <div className="font-bold text-xl tracking-wide opacity-90 mt-4">
-                                    How to start?
+                                    Lorem Ipsum
                                 </div>
+                                <p className="text-white/70 text-sm mt-2 max-w-[200px] leading-tight">
+                                    Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                                </p>
                             </div>
 
                         </div>
                     </motion.div>
-
                 </div>
             </div>
         </section>

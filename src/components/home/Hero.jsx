@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
 import { Button } from '../ui/Button';
-import { Star, Sparkles, Smartphone, ArrowRight, Zap, Globe } from 'lucide-react';
+import { Star, Sparkles, Smartphone, ArrowRight, Zap, Globe, Palette, Layout } from 'lucide-react';
 
 const Hero = () => {
     const ref = useRef(null);
@@ -43,7 +43,14 @@ const Hero = () => {
             </div>
 
             <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20 relative z-10 w-full">
-                <div className="text-center max-w-6xl mx-auto mb-20">
+                <div className="text-center max-w-6xl mx-auto mb-20 relative">
+
+                    {/* Decorative Blue Target - Top Right of Headline */}
+                    <div className="absolute top-[-20px] right-[10%] md:right-[15%] z-20 pointer-events-none">
+                        <div className="w-8 h-8 rounded-full border-2 border-brand-blue/30 flex items-center justify-center">
+                            <div className="w-2.5 h-2.5 rounded-full bg-brand-blue shadow-[0_0_10px_rgba(116,185,255,0.6)]" />
+                        </div>
+                    </div>
 
                     {/* Top Pill */}
                     <motion.div
@@ -59,24 +66,24 @@ const Hero = () => {
                         <span className="text-sm font-bold text-gray-600 tracking-wide">Available for new projects</span>
                     </motion.div>
 
-                    {/* Main Headline with Parallax */}
+                    {/* Main Headline */}
                     <motion.div style={{ x: xHead, y: yHead }}>
-                        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black tracking-tighter leading-[0.9] text-brand-dark mb-8">
-                            <span className="block overflow-hidden" style={{ padding: "20px" }}>
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tighter leading-[0.9] text-brand-dark mb-8 relative">
+                            <span className="block overflow-hidden" style={{ padding: "10px 0" }}>
                                 <motion.span initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="block">
                                     Crafting Digital
                                 </motion.span>
                             </span>
                             <span className="block overflow-hidden mt-2 sm:mt-4">
-                                <motion.span initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="block flex items-center justify-center gap-4 flex-wrap" style={{ padding: "20px" }}>
+                                <motion.span initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="block flex items-center justify-center gap-4 flex-wrap" style={{ padding: "10px 0" }}>
                                     <span className="bg-brand-yellow text-brand-dark px-8 py-3 md:px-10 md:py-4 rounded-[1.5rem] transform -rotate-2 inline-block shadow-lg border-2 border-brand-dark/10">Experiences</span>
                                     <motion.span
                                         initial={{ scale: 0, rotate: -180 }}
                                         animate={{ scale: 1, rotate: 0 }}
                                         transition={{ delay: 0.5, type: "spring" }}
-                                        className="inline-block relative -top-2"
+                                        className="inline-block relative"
                                     >
-                                        <Star className="w-12 h-12 md:w-20 md:h-20 text-brand-yellow fill-current animate-[spin_10s_linear_infinite]" />
+                                        <Star className="w-10 h-10 md:w-16 md:h-16 text-brand-yellow fill-current animate-[spin_10s_linear_infinite]" />
                                     </motion.span>
                                 </motion.span>
                             </span>
@@ -107,56 +114,86 @@ const Hero = () => {
                     </motion.div>
                 </div>
 
-                {/* Floating 3D Elements Composition */}
-                <div className="relative h-[200px] md:h-[300px] w-full max-w-6xl mx-auto hidden md:block">
-                    {/* Left Floating Card */}
+                {/* Floating Elements Composition - Responsive & Interactive */}
+                <div className="absolute inset-0 z-0 pointer-events-none hidden md:block">
+
+                    {/* 1. Left - Design System Card */}
                     <motion.div
-                        style={{ x: useTransform(mouseX, [-0.5, 0.5], [30, -30]), y: useTransform(mouseY, [-0.5, 0.5], [30, -30]), rotate: -6 }}
-                        className="absolute left-10 top-10 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-gray-100 w-72 z-20 hover:rotate-0 transition-transform duration-500 hover:z-30 hover:scale-105 cursor-default"
-                        initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}
+                        style={{
+                            x: useTransform(mouseX, [-0.5, 0.5], [30, -30]),
+                            y: useTransform(mouseY, [-0.5, 0.5], [30, -30]),
+                            rotate: -6
+                        }}
+                        initial={{ opacity: 0, x: -100, rotate: -6 }}
+                        animate={{ opacity: 1, x: 0, rotate: -6 }}
+                        transition={{ delay: 0.7, duration: 0.8 }}
+                        className="absolute left-[8%] top-[38%] bg-white p-4 rounded-[1.5rem] shadow-2xl border border-gray-100 w-60 pointer-events-auto hover:z-30 transition-transform duration-300"
                     >
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green flex items-center justify-center"><Smartphone className="w-6 h-6" /></div>
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-brand-purple/10 flex items-center justify-center text-brand-purple font-bold text-base">Ui</div>
                             <div>
-                                <div className="h-2 w-20 bg-gray-200 rounded-full mb-2" />
-                                <div className="h-2 w-12 bg-gray-100 rounded-full" />
+                                <h4 className="font-bold text-gray-900 leading-tight text-sm">Design System</h4>
+                                <p className="text-[10px] text-gray-400 font-medium">Updates</p>
                             </div>
                         </div>
-                        <div className="h-24 bg-gray-50 rounded-2xl w-full" />
-                    </motion.div>
-
-                    {/* Right Floating Card */}
-                    <motion.div
-                        style={{ x: useTransform(mouseX, [-0.5, 0.5], [-40, 40]), y: useTransform(mouseY, [-0.5, 0.5], [-20, 20]), rotate: 6 }}
-                        className="absolute right-10 top-0 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-gray-100 w-80 z-10 hover:rotate-0 transition-transform duration-500 hover:z-30 hover:scale-105 cursor-default"
-                        initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
-                    >
-                        <div className="flex justify-between items-center mb-6">
-                            <span className="text-lg font-bold text-gray-800">Analytics</span>
-                            <span className="text-xs font-bold bg-brand-purple/10 text-brand-purple px-3 py-1 rounded-full">+24%</span>
-                        </div>
-                        <div className="flex items-end gap-2 h-20">
-                            {[40, 70, 50, 90, 60, 80].map((h, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ height: 0 }} animate={{ height: `${h}%` }} transition={{ delay: 1 + (i * 0.1) }}
-                                    className="flex-1 bg-brand-purple rounded-t-lg opacity-80"
-                                />
-                            ))}
+                        <div className="grid grid-cols-2 gap-2">
+                            <div className="h-16 bg-gray-50 rounded-lg" />
+                            <div className="h-16 bg-gray-50 rounded-lg" />
                         </div>
                     </motion.div>
 
-                    {/* Center Background Shape */}
+                    {/* 2. Top Right - Palette Card */}
                     <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-dashed border-gray-200 rounded-full flex items-center justify-center -z-10"
+                        style={{
+                            x: useTransform(mouseX, [-0.5, 0.5], [-25, 25]),
+                            y: useTransform(mouseY, [-0.5, 0.5], [-25, 25]),
+                            rotate: 6
+                        }}
+                        initial={{ opacity: 0, y: -100, rotate: 6 }}
+                        animate={{ opacity: 1, y: 0, rotate: 6 }}
+                        transition={{ delay: 0.8, duration: 0.8 }}
+                        className="absolute right-[10%] top-[22%] bg-white p-3 rounded-[1.2rem] shadow-2xl border border-gray-100 w-44 pointer-events-auto hover:z-30 transition-transform duration-300"
                     >
-                        <div className="w-4 h-4 bg-brand-yellow rounded-full absolute -top-2" />
-                        <div className="w-4 h-4 bg-brand-blue rounded-full absolute -bottom-2" />
+                        <div className="bg-brand-yellow/10 rounded-xl p-3 h-20 flex items-center justify-center relative">
+                            <Palette className="w-6 h-6 text-brand-orange" />
+                            {/* Decorative Orange Dot above Palette */}
+                            <div className="absolute top-[-5px] right-[-5px] w-2.5 h-2.5 rounded-full bg-brand-orange" />
+                        </div>
+                        <div className="space-y-1.5 px-0.5 pb-0.5">
+                            <div className="h-1.2 w-full bg-gray-100 rounded-full" />
+                            <div className="h-1.2 w-2/3 bg-gray-100 rounded-full" />
+                        </div>
                     </motion.div>
+
+                    {/* 3. Bottom Right - Creative Layouts Card */}
+                    <motion.div
+                        style={{
+                            x: useTransform(mouseX, [-0.5, 0.5], [-15, 15]),
+                            y: useTransform(mouseY, [-0.5, 0.5], [-15, 15]),
+                            rotate: 1
+                        }}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.9, duration: 0.8 }}
+                        className="absolute right-[5%] bottom-[8%] bg-white p-3 rounded-[1.5rem] shadow-2xl border border-gray-100 w-56 pointer-events-auto hover:z-30 transition-transform duration-300"
+                    >
+                        <div className="h-32 rounded-lg bg-gradient-to-br from-brand-purple to-brand-orange flex items-center justify-center mb-3 shadow-md relative group overflow-hidden">
+                            <Layout className="w-8 h-8 text-white/90" />
+                        </div>
+                        <div className="px-0.5 pb-1">
+                            <h3 className="text-base font-bold text-gray-900 mb-0.5">Creative Layouts</h3>
+                            <p className="text-[10px] text-gray-500 leading-tight">Crafting interfaces that breathe and engage.</p>
+                        </div>
+
+                        {/* Blue Target Indicator at bottom right of card */}
+                        <div className="absolute right-[-8px] bottom-[-8px] z-20">
+                            <div className="w-7 h-7 rounded-full border border-brand-blue/30 bg-white shadow-soft flex items-center justify-center">
+                                <div className="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(116,185,255,0.8)]" />
+                            </div>
+                        </div>
+                    </motion.div>
+
                 </div>
-
             </div>
         </section>
     );

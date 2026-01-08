@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Hero from '../components/home/Hero';
+import About from '../components/home/About';
 import Overview from '../components/home/Overview';
 import WorkGrid from '../components/home/WorkGrid';
 import Gallery from '../components/home/Gallery';
@@ -26,7 +27,8 @@ const Home = () => {
     return (
         <main className="overflow-hidden">
             <Hero />
-            <Overview />
+            <About />
+            {/* <Overview /> */}
             <WorkGrid />
             {/* Gallery moved below WorkGrid */}
             <Gallery />

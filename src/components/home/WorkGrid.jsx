@@ -5,54 +5,60 @@ import SectionHeading from '../ui/SectionHeading';
 
 const projects = [
     {
-        title: "Snack Delivery",
-        category: "Mobile App",
-        tags: ["UX Research", "Prototyping"],
+        title: "Ipsum Dolor",
+        category: "Lorem",
+        description: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+        tags: ["Sit Amet", "Elit"],
         color: "bg-brand-yellow",
         textColor: "text-brand-dark",
         icon: <Smartphone size={24} />,
         span: "md:col-span-1"
     },
     {
-        title: "Finance Pro",
-        category: "SaaS Platform",
-        tags: ["Design System", "React"],
+        title: "Sit Amet",
+        category: "Consectetur",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+        tags: ["Adipiscing", "Tempor"],
         color: "bg-brand-purple",
         textColor: "text-white",
         icon: <Activity size={24} />,
         span: "md:col-span-2"
     },
     {
-        title: "Eco Tracker",
-        category: "Sustainability",
-        tags: ["Mobile", "Green Tech"],
+        title: "Magna Aliqua",
+        category: "Labore",
+        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        tags: ["Magna", "Aliqua"],
         color: "bg-brand-green",
         textColor: "text-white",
         icon: <Globe size={24} />,
         span: "md:col-span-1"
     },
     {
-        title: "FitLife Duo",
-        category: "Social Fitness",
-        tags: ["Community", "App"],
+        title: "Ut Enim",
+        category: "Minim",
+        description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+        tags: ["Veniam", "Nostrud"],
         color: "bg-brand-orange",
         textColor: "text-white",
         icon: <Zap size={24} />,
         span: "md:col-span-1"
     },
     {
-        title: "Modern Arch",
-        category: "Architecture",
-        tags: ["Web Design", "Minimalism"],
+        title: "Mollit Anim",
+        category: "Laboris",
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        tags: ["Ullamco", "Nisi"],
         color: "bg-brand-dark",
         textColor: "text-white",
         icon: <Layers size={24} />,
         span: "md:col-span-1"
     },
     {
-        title: "Cloud Box",
-        category: "Web App",
-        tags: ["SaaS", "Dashboard"],
+        title: "Totam Rem",
+        category: "Aperiam",
+        description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+        tags: ["Voluptatem", "Sequi"],
         color: "bg-brand-blue",
         textColor: "text-white",
         icon: <Layout size={24} />,
@@ -68,7 +74,7 @@ const WorkGrid = () => {
                 {/* Header - Consistent H2 and Body */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div className="text-left">
-                        <SectionHeading title1="Recent" title2="Creations" className="mb-4" title1Color="bg-brand-gray" textColor1="text-brand-dark" />
+                        <SectionHeading title1="Lorem" title2="Ipsum" className="mb-4" title1Color="bg-brand-gray" textColor1="text-brand-dark" />
                     </div>
 
                     <motion.p
@@ -78,7 +84,7 @@ const WorkGrid = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-gray-500 max-w-sm text-right md:text-left hidden md:block leading-relaxed"
                     >
-                        A collection of pixels, interactions, and user journeys crafted with precision.
+                        Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </motion.p>
                 </div>
 
@@ -91,7 +97,7 @@ const WorkGrid = () => {
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`group relative rounded-[2.5rem] p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden ${project.color} ${project.span}`}
+                            className={`group relative rounded-3xl md:rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden ${project.color} ${project.span}`}
                         >
                             {/* Texture */}
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay" />
@@ -115,6 +121,9 @@ const WorkGrid = () => {
                                     <h3 className={`text-3xl font-bold mt-1 ${project.textColor}`}>
                                         {project.title}
                                     </h3>
+                                    <p className={`mt-2 text-sm opacity-90 leading-relaxed font-medium ${project.textColor === 'text-brand-dark' ? 'text-brand-dark/80' : 'text-white/80'}`}>
+                                        {project.description}
+                                    </p>
                                 </div>
 
                                 {/* Hover Tags */}
@@ -137,7 +146,7 @@ const WorkGrid = () => {
                 </div>
 
                 <div className="mt-16 text-center md:hidden">
-                    <button className="text-brand-dark font-bold border-b-2 border-brand-dark pb-1">View All Projects</button>
+                    <button className="text-brand-dark font-bold border-b-2 border-brand-dark pb-1 hover:text-brand-purple hover:border-brand-purple transition-all">Lorem Ipsum View</button>
                 </div>
 
             </div>

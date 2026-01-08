@@ -5,23 +5,23 @@ import SectionHeading from '../ui/SectionHeading';
 const features = [
     {
         icon: <Layout className="w-8 h-8 text-brand-blue" />,
-        title: "Creative Layout",
-        desc: "Unique grid systems that break the mold."
+        title: "Lorem Ipsum",
+        desc: "Donec id elit non mi porta gravida at eget metus."
     },
     {
         icon: <Palette className="w-8 h-8 text-brand-yellow" />,
-        title: "Fully Customizable",
-        desc: "Colors, typography, and spacing that adapt."
+        title: "Sit Amet",
+        desc: "Nullam id dolor id nibh ultricies vehicula ut id elit."
     },
     {
         icon: <Zap className="w-8 h-8 text-brand-red" />,
-        title: "High Resolution",
-        desc: "Crisp assets ready for 4K displays."
+        title: "Consectetur",
+        desc: "Maecenas sed diam eget risus varius blandit sit amet."
     },
     {
         icon: <Smartphone className="w-8 h-8 text-brand-green" />,
-        title: "Device Variations",
-        desc: "Responsive designs for all screens."
+        title: "Adipiscing",
+        desc: "Donec ullamcorper nulla non metus auctor fringilla."
     }
 ];
 
@@ -30,13 +30,13 @@ const Features = () => {
         <section className="py-24 bg-brand-bg">
             <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20">
                 <div className="mb-16 text-center">
-                    <SectionHeading title1="Core" title2="Features" />
+                    <SectionHeading title1="Lorem" title2="Ipsum" />
                 </div>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="bg-white p-8 rounded-3xl shadow-card border border-gray-50 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 hover:shadow-xl group"
+                            className="bg-white p-6 md:p-8 rounded-3xl shadow-card border border-gray-50 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 hover:shadow-xl group"
                         >
                             <div className="w-16 h-16 rounded-2xl bg-brand-gray/50 flex items-center justify-center mb-6 group-hover:bg-brand-gray transition-colors">
                                 {feature.icon}

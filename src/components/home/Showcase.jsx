@@ -22,7 +22,7 @@ const Showcase = () => {
                 {/* Horizontal Scroll Track */}
                 <motion.div style={{ x }} className="flex gap-8">
                     {[1, 2, 3, 4].map((item, index) => (
-                        <div key={index} className="w-[400px] md:w-[600px] aspect-[16/10] bg-blue-50 rounded-[2.5rem] shadow-xl overflow-hidden relative flex-shrink-0 group">
+                        <div key={index} className="w-[85vw] sm:w-[400px] md:w-[600px] aspect-[16/10] bg-blue-50 rounded-3xl md:rounded-[2.5rem] shadow-xl overflow-hidden relative flex-shrink-0 group">
                             {/* Faux Browser/App content */}
                             <div className={`absolute inset-0 bg-gradient-to-br ${index === 0 ? 'from-brand-blue/20 to-brand-purple/20' :
                                 index === 1 ? 'from-brand-yellow/20 to-brand-orange/20' :
@@ -30,7 +30,7 @@ const Showcase = () => {
                                         'from-brand-red/20 to-brand-purple/20'
                                 }`}></div>
 
-                            <div className="absolute inset-8 bg-white rounded-[2rem] shadow-lg flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-500">
+                            <div className="absolute inset-4 md:inset-8 bg-white rounded-2xl md:rounded-[2rem] shadow-lg flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-500">
                                 <div className="text-center">
                                     <div className="text-6xl mb-4">
                                         {index === 0 ? '👟' : index === 1 ? '🎧' : index === 2 ? '📸' : '🎮'}

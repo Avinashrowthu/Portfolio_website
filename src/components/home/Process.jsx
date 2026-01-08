@@ -54,7 +54,7 @@ const Process = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <Card className="h-full flex flex-col items-center text-center p-8 hover:shadow-lg transition-all border-none shadow-sm">
+                            <Card className="h-full flex flex-col items-center text-center p-6 md:p-8 hover:shadow-xl transition-all border border-gray-100/50 shadow-card rounded-3xl bg-white">
                                 <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${step.color} text-xl`}>
                                     <step.icon size={32} />
                                 </div>

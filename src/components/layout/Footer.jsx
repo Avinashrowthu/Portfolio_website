@@ -6,22 +6,25 @@ const Footer = () => {
         <footer className="py-32 bg-brand-dark relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20 text-center relative z-10">
 
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-12 tracking-tight">
-                    Thank You <br />
-                    <span className="text-brand-orange">For Watching!</span>
+                <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tight">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing.
                 </h2>
+                <p className="text-gray-400 mb-12 text-lg">Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 
-                <div className="flex justify-center gap-6 mb-16">
+                <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-16">
                     <Button size="xl" className="rounded-full bg-brand-orange text-white shadow-xl shadow-brand-orange/20 hover:bg-white hover:text-brand-dark transition-all">
-                        Start a Project
+                        Lorem Ipsum
                     </Button>
                     <Button size="xl" variant="outline" className="rounded-full border-2 border-white/20 bg-transparent text-white hover:bg-brand-yellow hover:text-brand-dark hover:border-brand-yellow transition-all">
-                        Say Hello 👋
+                        Dolor Sit
+                    </Button>
+                    <Button size="xl" variant="outline" className="rounded-full border-2 border-white/20 bg-transparent text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all">
+                        Amet
                     </Button>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm font-medium border-t border-white/10 pt-8">
-                    <p>© {new Date().getFullYear()} Antigravity. All rights reserved.</p>
+                    <p>© 2026 Avinash. Designed with purpose and passion.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <a href="#" className="hover:text-brand-dark transition-colors">Behance</a>
                         <a href="#" className="hover:text-brand-dark transition-colors">Dribbble</a>

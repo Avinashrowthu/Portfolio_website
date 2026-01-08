@@ -30,11 +30,12 @@ const Gallery = () => {
 
                 {/* Header Section */}
                 <div className="text-center mb-20">
-                    <SectionHeading title1="Unorganized" title2="Chaos" title2Color="bg-brand-purple" />
+                    <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-4">Lorem Ipsum Dolor Sit Amet</h2>
+                    <p className="text-gray-500 max-w-2xl mx-auto text-lg">Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
                 </div>
 
                 {/* Masonry / Scattered Grid */}
-                <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 md:gap-8 md:space-y-8">
                     {images.map((img, index) => (
                         <motion.div
                             key={index}
