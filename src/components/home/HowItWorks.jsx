@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Heart, Target, Lightbulb } from 'lucide-react';
 
 const HowItWorks = () => {
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                     {/* Left: Stacked Sticker Text - Slide In Stagger */}
                     <motion.div
@@ -21,63 +21,87 @@ const HowItWorks = () => {
                     >
                         <motion.div
                             variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                            className="transform -rotate-[6deg] bg-brand-orange text-white px-8 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl text-3xl sm:text-4xl md:text-6xl font-bold shadow-xl z-10 border-2 border-brand-orange"
+                            className="transform -rotate-[6deg] bg-brand-orange text-white px-6 py-2 md:px-8 md:py-3 rounded-xl md:rounded-2xl text-2xl sm:text-3xl md:text-5xl font-black shadow-lg z-10 border-2 border-white"
                         >
-                            Lorem
+                            Design
                         </motion.div>
                         <motion.div
                             variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                            className="transform rotate-[6deg] bg-brand-yellow text-brand-dark px-10 py-4 md:px-12 md:py-5 rounded-xl md:rounded-2xl text-3xl sm:text-4xl md:text-6xl font-bold shadow-xl -mt-4 md:-mt-6 z-20 border-2 border-brand-yellow"
+                            className="transform rotate-[6deg] bg-brand-yellow text-brand-dark px-8 py-3 md:px-10 md:py-4 rounded-xl md:rounded-2xl text-2xl sm:text-3xl md:text-5xl font-black shadow-lg -mt-3 md:-mt-4 z-20 border-2 border-white"
                         >
-                            Ipsum
+                            With
                         </motion.div>
                         <motion.div
                             variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                            className="relative transform -rotate-[3deg] bg-brand-dark text-white px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl text-3xl sm:text-4xl md:text-6xl font-bold shadow-xl -mt-4 md:-mt-6 z-30 flex items-center gap-4"
+                            className="relative transform -rotate-[3deg] bg-brand-dark text-white px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl text-2xl sm:text-3xl md:text-5xl font-black shadow-lg -mt-3 md:-mt-4 z-30 flex items-center gap-4 border-2 border-white"
                         >
-                            Dolor Sit
+                            Purpose
+                        </motion.div>
 
-                            {/* Star Icon - Badge Style */}
-                            <div className="absolute -right-16 top-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-[12deg]">
-                                <svg className="w-10 h-10 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                                </svg>
+                        <motion.div className="h-16" /> {/* Spacer */}
+                    </motion.div>
+
+                    {/* Right: Philosophy Cards */}
+                    <div className="space-y-4">
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-brand-bg p-6 md:p-7 rounded-[2rem] border border-gray-100 shadow-soft hover:shadow-xl transition-all"
+                        >
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center text-brand-red shrink-0">
+                                    <Heart className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="text-[24px] font-black text-brand-dark mb-1">Empathy First</h3>
+                                    <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                                        Understanding the person behind the screen is the foundation of every pixel I place.
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
 
-                        <motion.div className="h-20" /> {/* Spacer */}
-                    </motion.div>
-
-                    {/* Right: Gradient Video Card with Reveal */}
-                    <motion.div
-                        initial={{ opacity: 0, rotate: 5, scale: 0.9 }}
-                        whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, type: "spring" }}
-                        className="relative group cursor-pointer"
-                    >
-                        <div className="aspect-square bg-gradient-to-br from-[#6C5CE7] via-[#9B89F7] to-[#FD79A8] rounded-[3rem] shadow-2xl flex items-center justify-center relative overflow-hidden transition-all duration-500 hover:shadow-brand-purple/50 hover:-translate-y-2">
-
-                            {/* Glass Overlay/Sheen */}
-                            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                            {/* Play Button Interface */}
-                            <div className="text-center text-white relative z-10">
-                                <div className="w-20 h-20 rounded-full border-2 border-white/50 border-dashed animate-[spin_10s_linear_infinite] flex items-center justify-center mb-4 mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="bg-brand-bg p-6 md:p-7 rounded-[2rem] border border-gray-100 shadow-soft hover:shadow-xl transition-all"
+                        >
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
+                                    <Target className="w-6 h-6" />
                                 </div>
-                                <div className="absolute top-0 left-0 right-0 w-20 h-20 flex items-center justify-center mx-auto">
-                                    <Play fill="white" className="w-8 h-8 text-white translate-x-1" />
+                                <div>
+                                    <h3 className="text-[24px] font-black text-brand-dark mb-1">Goal Oriented</h3>
+                                    <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                                        Design is a tool for problem solving, not just decoration. Every choice has a reason.
+                                    </p>
                                 </div>
-                                <div className="font-bold text-xl tracking-wide opacity-90 mt-4">
-                                    Lorem Ipsum
-                                </div>
-                                <p className="text-white/70 text-sm mt-2 max-w-[200px] leading-tight">
-                                    Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                                </p>
                             </div>
+                        </motion.div>
 
-                        </div>
-                    </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="bg-brand-bg p-6 md:p-7 rounded-[2rem] border border-gray-100 shadow-soft hover:shadow-xl transition-all"
+                        >
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow shrink-0">
+                                    <Lightbulb className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="text-[24px] font-black text-brand-dark mb-1">Simple, Not Basic</h3>
+                                    <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                                        Complexity should be hidden behind an interface that feels effortless to use.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

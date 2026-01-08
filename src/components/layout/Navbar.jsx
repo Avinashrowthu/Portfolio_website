@@ -16,9 +16,9 @@ const Navbar = () => {
     }, []);
 
     const links = [
+        { name: 'About Me', href: '/#about' },
         { name: 'Work', href: '/#work' },
         { name: 'Gallery', href: '/#gallery' },
-        { name: 'About Me', href: '/about' },
     ];
 
     // Helper to scroll if on same page
@@ -52,15 +52,15 @@ const Navbar = () => {
                         </Link>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex items-center gap-2 bg-white/50 backdrop-blur-lg rounded-full p-1.5 border border-white/50 shadow-sm">
+                        <div className="hidden md:flex items-center gap-1 lg:gap-2 bg-white/50 backdrop-blur-lg rounded-full p-1 border border-white/50 shadow-sm">
                             {links.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.href}
                                     onClick={() => handleNavClick(link.href)}
-                                    className={`px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 ${location.pathname === link.href
-                                            ? 'bg-brand-dark text-white'
-                                            : 'text-brand-dark hover:text-white hover:bg-brand-dark'
+                                    className={`px-4 lg:px-6 py-2 md:py-2.5 text-xs lg:text-sm font-semibold rounded-full transition-all duration-300 ${location.pathname === link.href
+                                        ? 'bg-brand-dark text-white'
+                                        : 'text-brand-dark hover:text-white hover:bg-brand-dark'
                                         }`}
                                 >
                                     {link.name}
@@ -69,7 +69,7 @@ const Navbar = () => {
                         </div>
 
                         {/* CTA */}
-                        <div className="hidden md:flex items-center gap-3">
+                        <div className="hidden md:flex items-center gap-2 lg:gap-3">
                             <Button
                                 className="rounded-full border-2 border-brand-yellow bg-transparent text-brand-dark px-6 hover:bg-brand-yellow hover:text-brand-dark transition-all duration-300 flex items-center gap-2 font-bold group/resume"
                             >

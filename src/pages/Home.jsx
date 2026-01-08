@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Hero from '../components/home/Hero';
 import About from '../components/home/About';
-import Overview from '../components/home/Overview';
+import Stack from '../components/home/Stack';
 import WorkGrid from '../components/home/WorkGrid';
 import Gallery from '../components/home/Gallery';
 import Features from '../components/home/Features';
@@ -12,14 +12,21 @@ const Home = () => {
     const { hash } = useLocation();
 
     useEffect(() => {
+        // Prevent browser from restoring scroll position
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+
         if (hash) {
-            const element = document.getElementById(hash.replace('#', ''));
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
             if (element) {
                 setTimeout(() => {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
             }
         } else {
+            // Force scroll to top on mount
             window.scrollTo(0, 0);
         }
     }, [hash]);
@@ -28,9 +35,8 @@ const Home = () => {
         <main className="overflow-hidden">
             <Hero />
             <About />
-            {/* <Overview /> */}
+            <Stack />
             <WorkGrid />
-            {/* Gallery moved below WorkGrid */}
             <Gallery />
             <Features />
             <HowItWorks />

@@ -5,7 +5,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Preloader from './components/layout/Preloader';
 import Home from './pages/Home';
-import AboutPage from './pages/AboutPage';
 import CustomCursor from './components/ui/CustomCursor';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
                         <Navbar />
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/about" element={<AboutPage />} />
                         </Routes>
                         <Footer />
                     </>

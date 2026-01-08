@@ -25,16 +25,29 @@ const Gallery = () => {
     const yMove = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
     return (
-        <section id="gallery" className="py-32 bg-[#F4EDE5] relative overflow-hidden" ref={containerRef}>
+        <section id="gallery" className="py-24 bg-[#F4EDE5] relative overflow-hidden" ref={containerRef}>
             <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20">
 
-                {/* Header Section */}
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-4">Lorem Ipsum Dolor Sit Amet</h2>
-                    <p className="text-gray-500 max-w-2xl mx-auto text-lg">Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div className="text-left">
+                        <SectionHeading
+                            title1="Visual"
+                            title2="Explorations"
+                            title1Color="bg-brand-gray"
+                            textColor1="text-brand-dark"
+                        />
+                    </div>
+                    <motion.p
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-lg text-gray-500 max-w-sm text-right md:text-left hidden md:block leading-relaxed"
+                    >
+                        A collection of design experiments, concepts, and creative bursts where I challenge the boundaries of interaction and aesthetics.
+                    </motion.p>
                 </div>
 
-                {/* Masonry / Scattered Grid */}
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 md:gap-8 md:space-y-8">
                     {images.map((img, index) => (
                         <motion.div
@@ -62,7 +75,6 @@ const Gallery = () => {
 
             </div>
 
-            {/* Playful blobs in background */}
             <div className="absolute top-1/4 left-0 w-64 h-64 bg-brand-yellow/30 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-brand-blue/30 rounded-full blur-[100px] pointer-events-none" />
         </section>

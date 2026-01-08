@@ -19,7 +19,7 @@ const About = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-50 rounded-full blur-3xl -z-10 opacity-60 translate-x-1/3 -translate-y-1/3"></div>
 
             <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                     {/* Left Column: Copy */}
                     <motion.div
@@ -33,21 +33,12 @@ const About = () => {
                             <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">About Me</span>
                         </div>
 
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark mb-8 leading-tight">
-                            Hi, I’m Avinash — a <span className="text-brand-purple relative inline-block">
-                                UX/UI Designer
-                                <svg className="absolute w-full h-3 -bottom-1 left-0 text-brand-yellow -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" opacity="0.6" />
-                                </svg>
-                            </span> who designs with purpose.
-                        </h2>
-
                         <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-medium">
                             <p>
-                                I design intuitive and meaningful digital experiences by combining user research, thoughtful UX strategy, and clean visual design. My focus is on solving real user problems while aligning design decisions with business goals.
+                                I’m a <span className="text-brand-dark font-bold">UX/UI Designer with 4+ years of experience</span> crafting intuitive, user-centered digital experiences. I design clean, minimal, and consistent interfaces that align with modern design standards and usability principles.
                             </p>
                             <p>
-                                I enjoy turning complex ideas into simple, usable products and believe that great design is not just how it looks, but <span className="text-brand-dark font-bold">how effortlessly it works</span>.
+                                With a strong focus on interaction design and visual clarity, I enjoy transforming complex ideas into simple, meaningful solutions. My experience across web and product design helps me maintain the right balance between <span className="text-brand-dark font-bold">human-centered design and aesthetic precision.</span>
                             </p>
                         </div>
 
@@ -70,7 +61,7 @@ const About = () => {
                             {/* Decorative Grid */}
                             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#2D3436_1px,transparent_1px)] [background-size:16px_16px] rounded-[3rem] pointer-events-none"></div>
 
-                            <h3 className="text-2xl font-bold text-brand-dark mb-8">Core Competencies</h3>
+                            <h3 className="text-[28px] font-bold text-brand-dark mb-8">Core Competencies</h3>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {skills.map((skill, index) => (

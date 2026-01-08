@@ -7,7 +7,8 @@ const SectionHeading = ({
     title1Color = "bg-brand-yellow",
     title2Color = "bg-brand-orange",
     textColor1 = "text-brand-dark",
-    textColor2 = "text-white"
+    textColor2 = "text-white",
+    className = ""
 }) => {
     return (
         <motion.div
@@ -15,18 +16,25 @@ const SectionHeading = ({
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ type: "spring", bounce: 0.5 }}
-            className="relative inline-flex flex-wrap justify-center items-center gap-2 mb-16"
+            className={`relative inline-flex flex-wrap justify-center items-center gap-2 ${className}`}
         >
             {/* First Sticker */}
-            <div className={`transform -rotate-3 ${title1Color} px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 rounded-2xl md:rounded-[1.5rem] shadow-lg border-2 border-brand-dark/10 hover:scale-105 hover:rotate-2 transition-all duration-300 z-10 cursor-default`}>
-                <span className={`text-3xl sm:text-4xl md:text-5xl font-black ${textColor1} tracking-tighter`}>{title1}</span>
+            <div className={`relative transform -rotate-3 ${title1Color} px-6 py-2.5 md:px-8 md:py-3.5 rounded-xl md:rounded-2xl shadow-lg border-2 border-brand-dark/10 hover:scale-105 hover:rotate-2 transition-all duration-300 z-10 cursor-default`}>
+                <span className={`text-[28px] sm:text-[34px] md:text-[40px] font-black ${textColor1} tracking-tighter`}>{title1}</span>
+
+                {/* Blue Target Indicator (matching user prompt) */}
+                <div className="absolute -top-3 -left-3 md:-top-5 md:-left-5 z-20">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-brand-blue/30 bg-white shadow-soft flex items-center justify-center">
+                        <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-brand-blue shadow-[0_0_10px_rgba(116,185,255,0.8)]" />
+                    </div>
+                </div>
             </div>
 
             {/* Second Sticker */}
-            <div className={`relative transform rotate-2 ${title2Color} px-6 py-3 sm:px-10 sm:py-4 md:px-12 md:py-5 rounded-2xl md:rounded-[1.5rem] shadow-lg border-2 border-brand-dark/10 -ml-2 sm:-ml-4 hover:scale-105 hover:-rotate-2 transition-all duration-300 z-20 cursor-default`}>
-                <span className={`text-3xl sm:text-4xl md:text-5xl font-black ${textColor2} tracking-tighter`}>{title2}</span>
+            <div className={`relative transform rotate-2 ${title2Color} px-6 py-3 md:px-9 md:py-4 rounded-xl md:rounded-2xl shadow-lg border-2 border-brand-dark/10 -ml-2 sm:-ml-3 hover:scale-105 hover:-rotate-2 transition-all duration-300 z-20 cursor-default`}>
+                <span className={`text-[28px] sm:text-[34px] md:text-[40px] font-black ${textColor2} tracking-tighter`}>{title2}</span>
 
-                {/* Star Decoration based on the image provided in user request, mostly appearing on the second sticker */}
+                {/* Star Decoration */}
                 <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
