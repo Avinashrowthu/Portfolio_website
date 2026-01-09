@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import Preloader from './components/layout/Preloader';
-import Home from './pages/Home';
 import CustomCursor from './components/ui/CustomCursor';
+import Footer from './components/layout/Footer';
+import Home from './pages/Home';
+import Navbar from './components/layout/Navbar';
+import Preloader from './components/layout/Preloader';
 
 function App() {
     const [loading, setLoading] = useState(true);

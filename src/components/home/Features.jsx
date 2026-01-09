@@ -1,29 +1,19 @@
 import React from 'react';
-import { Search, Layout, Palette, UserCheck } from 'lucide-react';
+import { Layout, Palette, PenTool, Search, UserCheck, Zap } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 import { motion } from 'framer-motion';
 import { Card } from '../ui/Card';
 
 const features = [
     {
-        icon: <Search className="w-6 h-6" />,
-        title: "User Research",
-        color: "bg-blue-100 text-blue-600",
-    },
-    {
         icon: <Layout className="w-6 h-6" />,
         title: "Interaction",
         color: "bg-purple-100 text-purple-600",
     },
     {
-        icon: <Palette className="w-6 h-6" />,
-        title: "Visual Identity",
-        color: "bg-yellow-100 text-yellow-600",
-    },
-    {
-        icon: <UserCheck className="w-6 h-6" />,
-        title: "Usability Testing",
-        color: "bg-green-100 text-green-600",
+        icon: <Zap className="w-6 h-6" />,
+        title: "Motion Design",
+        color: "bg-red-100 text-red-600",
     },
     {
         icon: <PenTool className="w-6 h-6" />,
@@ -31,9 +21,19 @@ const features = [
         color: "bg-orange-100 text-orange-600",
     },
     {
-        icon: <Zap className="w-6 h-6" />,
-        title: "Motion Design",
-        color: "bg-red-100 text-red-600",
+        icon: <UserCheck className="w-6 h-6" />,
+        title: "Usability Testing",
+        color: "bg-green-100 text-green-600",
+    },
+    {
+        icon: <Search className="w-6 h-6" />,
+        title: "User Research",
+        color: "bg-blue-100 text-blue-600",
+    },
+    {
+        icon: <Palette className="w-6 h-6" />,
+        title: "Visual Identity",
+        color: "bg-yellow-100 text-yellow-600",
     }
 ];
 
