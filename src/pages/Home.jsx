@@ -6,8 +6,6 @@ import WorkGrid from '../components/home/WorkGrid';
 import Gallery from '../components/home/Gallery';
 import Features from '../components/home/Features';
 import HowItWorks from '../components/home/HowItWorks';
-import Overview from '../components/home/Overview';
-import Inside from '../components/home/Inside';
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
@@ -36,14 +34,12 @@ const Home = () => {
     return (
         <main className="overflow-hidden">
             <Hero />
-            <Overview />
             <About />
             <Stack />
             <WorkGrid />
             <Gallery />
             <Features />
             <HowItWorks />
-            <Inside />
         </main>
     );
 };

@@ -35,7 +35,7 @@ const Preloader = ({ onComplete }) => {
             <div className="w-full max-w-md px-6">
                 <div className="flex justify-between items-end mb-4">
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
-                        Antigravity<span className="text-brand-purple">.</span>
+                        Avinash Naidu<span className="text-brand-purple">.</span>
                     </h1>
                     <span className="text-2xl md:text-3xl font-light font-mono text-gray-400">
                         {progress}%

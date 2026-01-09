@@ -47,7 +47,7 @@ const Navbar = () => {
                                 <span className="absolute z-10 translate-y-8 group-hover:translate-y-0 transition-transform duration-300 block text-brand-yellow">A</span>
                             </div>
                             <span className="font-bold text-xl tracking-tight text-brand-dark hidden sm:block">
-                                Antigravity
+                                Avinash Naidu
                             </span>
                         </Link>
 
