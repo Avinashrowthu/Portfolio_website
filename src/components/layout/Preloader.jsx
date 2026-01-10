@@ -11,9 +11,10 @@ const Preloader = ({ onComplete }) => {
                     clearInterval(timer);
                     return 100;
                 }
-                return prev + 1;
+                const diff = Math.random() * 10;
+                return Math.min(prev + diff, 100);
             });
-        }, 20);
+        }, 30);
 
         return () => clearInterval(timer);
     }, []);
@@ -22,7 +23,7 @@ const Preloader = ({ onComplete }) => {
         if (progress === 100) {
             setTimeout(() => {
                 onComplete();
-            }, 500);
+            }, 300);
         }
     }, [progress, onComplete]);
 

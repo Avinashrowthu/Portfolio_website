@@ -5,16 +5,35 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-brand-bg text-brand-text antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Force hardware acceleration on common animated elements */
+  .will-change-transform {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* GPU acceleration for blurry elements */
+  .blur-xl,
+  .blur-2xl,
+  .blur-3xl {
+    will-change: filter;
+    transform: translateZ(0);
   }
 }

@@ -1,37 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Figma, Code, Layout, Cpu, Globe, Zap, Palette, Layers, Box } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 
 const tools = [
-    { name: 'Figma', icon: <Figma className="w-8 h-8 text-[#F24E1E]" />, bgColor: 'bg-[#F24E1E]/5', borderColor: 'group-hover:border-[#F24E1E]/30', shadow: 'group-hover:shadow-[#F24E1E]/10' },
-    { name: 'Framer', icon: <Layers className="w-8 h-8 text-[#0055FF]" />, bgColor: 'bg-[#0055FF]/5', borderColor: 'group-hover:border-[#0055FF]/30', shadow: 'group-hover:shadow-[#0055FF]/10' },
-    { name: 'React', icon: <Cpu className="w-8 h-8 text-[#61DAFB]" />, bgColor: 'bg-[#61DAFB]/5', borderColor: 'group-hover:border-[#61DAFB]/30', shadow: 'group-hover:shadow-[#61DAFB]/10' },
-    { name: 'Tailwind', icon: <Zap className="w-8 h-8 text-[#38BDF8]" />, bgColor: 'bg-[#38BDF8]/5', borderColor: 'group-hover:border-[#38BDF8]/30', shadow: 'group-hover:shadow-[#38BDF8]/10' },
-    { name: 'JavaScript', icon: <Code className="w-8 h-8 text-[#F7DF1E]" />, bgColor: 'bg-[#F7DF1E]/5', borderColor: 'group-hover:border-[#F7DF1E]/30', shadow: 'group-hover:shadow-[#F7DF1E]/10' },
-    { name: 'Vite', icon: <Zap className="w-8 h-8 text-[#646CFF]" />, bgColor: 'bg-[#646CFF]/5', borderColor: 'group-hover:border-[#646CFF]/30', shadow: 'group-hover:shadow-[#646CFF]/10' },
-    { name: 'Three.js', icon: <Globe className="w-8 h-8 text-black" />, bgColor: 'bg-black/5', borderColor: 'group-hover:border-black/30', shadow: 'group-hover:shadow-black/10' },
-    { name: 'Adobe Suite', icon: <Palette className="w-8 h-8 text-[#FF0000]" />, bgColor: 'bg-[#FF0000]/5', borderColor: 'group-hover:border-[#FF0000]/30', shadow: 'group-hover:shadow-[#FF0000]/10' },
-    { name: 'GitHub', icon: <Code className="w-8 h-8 text-[#181717]" />, bgColor: 'bg-[#181717]/5', borderColor: 'group-hover:border-[#181717]/30', shadow: 'group-hover:shadow-[#181717]/10' },
-    { name: 'VS Code', icon: <Layout className="w-8 h-8 text-[#007ACC]" />, bgColor: 'bg-[#007ACC]/5', borderColor: 'group-hover:border-[#007ACC]/30', shadow: 'group-hover:shadow-[#007ACC]/10' },
-    { name: 'Notion', icon: <Layers className="w-8 h-8 text-black" />, bgColor: 'bg-black/5', borderColor: 'group-hover:border-black/30', shadow: 'group-hover:shadow-black/10' },
-    { name: 'Blender', icon: <Box className="w-8 h-8 text-[#EBAD52]" />, bgColor: 'bg-[#EBAD52]/5', borderColor: 'group-hover:border-[#EBAD52]/30', shadow: 'group-hover:shadow-[#EBAD52]/10' },
+    { name: 'Figma', icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg', bgColor: 'bg-[#F24E1E]/10', shadow: 'shadow-[#F24E1E]/5' },
+    { name: 'Sketch', icon: 'https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg', bgColor: 'bg-[#FDB300]/10', shadow: 'shadow-[#FDB300]/5' },
+    { name: 'Adobe XD', icon: 'https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg', bgColor: 'bg-[#FF61F6]/10', shadow: 'shadow-[#FF61F6]/5' },
+    { name: 'Adobe Illustrator', icon: 'https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg', bgColor: 'bg-[#FF9A00]/10', shadow: 'shadow-[#FF9A00]/5' },
+    { name: 'Adobe Photoshop', icon: 'https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg', bgColor: 'bg-[#31A8FF]/10', shadow: 'shadow-[#31A8FF]/5' },
+    { name: 'Adobe After Effects', icon: 'https://skillicons.dev/icons?i=ae', bgColor: 'bg-[#9999FF]/10', shadow: 'shadow-[#9999FF]/5' },
+    { name: 'FigJam', icon: 'https://skillicons.dev/icons?i=figma', bgColor: 'bg-[#F24E1E]/10', shadow: 'shadow-[#F24E1E]/5' },
+    { name: 'Miro', icon: 'https://cdn.worldvectorlogo.com/logos/miro-2.svg', bgColor: 'bg-[#050038]/10', shadow: 'shadow-[#050038]/5' },
+    { name: 'HTML5', icon: 'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg', bgColor: 'bg-[#E34F26]/10', shadow: 'shadow-[#E34F26]/5' },
+    { name: 'CSS3', icon: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg', bgColor: 'bg-[#1572B6]/10', shadow: 'shadow-[#1572B6]/5' },
+    { name: 'React.js', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg', bgColor: 'bg-[#61DAFB]/10', shadow: 'shadow-[#61DAFB]/5' },
+    { name: 'Framer', icon: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg', bgColor: 'bg-[#0055FF]/10', shadow: 'shadow-[#0055FF]/5' },
 ];
 
 const Stack = () => {
     return (
-        <section id="stack" className="py-20 bg-white relative overflow-hidden">
-            {/* Background Colorful Blobs */}
+        <section id="stack" className="py-24 bg-[#FAFAFA] relative overflow-hidden">
+            {/* Background Colorful Blobs - Simplified for Performance */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
-                    animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-[-10%] left-[-5%] w-[300px] h-[300px] bg-brand-yellow/10 rounded-full blur-[80px]"
+                    animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-[-10%] left-[-5%] w-[300px] h-[300px] bg-brand-yellow/10 rounded-full blur-[40px] will-change-transform"
                 />
                 <motion.div
-                    animate={{ x: [0, -40, 0], y: [0, 60, 0] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-brand-orange/10 rounded-full blur-[100px]"
+                    animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-brand-orange/10 rounded-full blur-[50px] will-change-transform"
                 />
             </div>
 
@@ -44,31 +43,31 @@ const Stack = () => {
                 </div>
 
                 {/* Staggered Grid of Colorful Cards */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     {tools.map((tool, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
                             transition={{
-                                delay: index * 0.05,
-                                type: "spring",
-                                stiffness: 260,
-                                damping: 20
+                                delay: index * 0.03,
+                                duration: 0.5,
+                                ease: "easeOut"
                             }}
                             whileHover={{
-                                y: -8,
-                                rotate: index % 2 === 0 ? 1 : -1,
-                                scale: 1.02
+                                y: -10,
+                                scale: 1.02,
+                                transition: { duration: 0.3 }
                             }}
-                            className={`group relative p-6 rounded-[2rem] ${tool.bgColor} border border-transparent transition-all duration-500 cursor-pointer flex flex-col items-center justify-center gap-4 ${tool.borderColor} ${tool.shadow} hover:shadow-xl`}
+                            className="group relative p-8 rounded-[2.5rem] bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-5 will-change-transform"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md group-hover:shadow-xl transition-all duration-500 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50" />
-                                <div className="relative z-10">{tool.icon}</div>
+                            <div className={`w-16 h-16 rounded-2xl ${tool.bgColor} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                                <div className="relative w-8 h-8 flex items-center justify-center">
+                                    <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" loading="lazy" />
+                                </div>
                             </div>
-                            <span className="font-black text-brand-dark tracking-tighter text-base">{tool.name}</span>
+                            <span className="font-bold text-gray-800 tracking-tight text-base">{tool.name}</span>
                         </motion.div>
                     ))}
                 </div>

@@ -133,7 +133,7 @@ const WorkGrid = () => {
                                 </div>
                             </div>
 
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 ease-out pointer-events-none" />
+                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700 ease-out pointer-events-none will-change-transform" />
                         </motion.div>
                     ))}
                 </div>

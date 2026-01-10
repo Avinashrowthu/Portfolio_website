@@ -87,8 +87,8 @@ const About = () => {
                         </div>
 
                         {/* Background Shapes */}
-                        <div className="absolute top-10 -left-10 w-32 h-32 bg-brand-purple rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob"></div>
-                        <div className="absolute -bottom-10 right-10 w-32 h-32 bg-brand-yellow rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000"></div>
+                        <div className="absolute top-10 -left-10 w-32 h-32 bg-brand-purple rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob will-change-transform"></div>
+                        <div className="absolute -bottom-10 right-10 w-32 h-32 bg-brand-yellow rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 will-change-transform"></div>
                     </motion.div>
 
                 </div>

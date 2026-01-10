@@ -75,8 +75,8 @@ const Gallery = () => {
 
             </div>
 
-            <div className="absolute top-1/4 left-0 w-64 h-64 bg-brand-yellow/30 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-brand-blue/30 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-1/4 left-0 w-64 h-64 bg-brand-yellow/30 rounded-full blur-[40px] pointer-events-none will-change-transform" />
+            <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-brand-blue/30 rounded-full blur-[50px] pointer-events-none will-change-transform" />
         </section>
     );
 };

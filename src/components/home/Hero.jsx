@@ -37,9 +37,9 @@ const Hero = () => {
         >
             {/* 1. Animated & Interactive Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div style={{ x: xBlob, y: yBlob }} className="absolute top-[10%] left-[5%] w-48 h-48 md:w-72 md:h-72 rounded-full bg-brand-yellow/40 blur-[80px]" />
-                <motion.div style={{ x: xBlob, y: useTransform(yBlob, v => v * -1.5) }} className="absolute bottom-[20%] right-[10%] w-64 h-64 md:w-96 md:h-96 rounded-full bg-brand-purple/30 blur-[100px]" />
-                <motion.div style={{ x: useTransform(xBlob, v => v * 1.5), y: yBlob }} className="absolute top-[30%] right-[30%] w-32 h-32 md:w-48 md:h-48 rounded-full bg-brand-orange/30 blur-[60px]" />
+                <motion.div style={{ x: xBlob, y: yBlob }} className="absolute top-[10%] left-[5%] w-48 h-48 md:w-72 md:h-72 rounded-full bg-brand-yellow/40 blur-[40px] will-change-transform" />
+                <motion.div style={{ x: xBlob, y: useTransform(yBlob, v => v * -1.5) }} className="absolute bottom-[20%] right-[10%] w-64 h-64 md:w-96 md:h-96 rounded-full bg-brand-purple/30 blur-[50px] will-change-transform" />
+                <motion.div style={{ x: useTransform(xBlob, v => v * 1.5), y: yBlob }} className="absolute top-[30%] right-[30%] w-32 h-32 md:w-48 md:h-48 rounded-full bg-brand-orange/30 blur-[30px] will-change-transform" />
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
             </div>
 
@@ -142,7 +142,7 @@ const Hero = () => {
                             duration: 0.8,
                             y: { duration: 4, repeat: Infinity, ease: "easeInOut" } // Floating transition
                         }}
-                        className="absolute left-[2%] top-[25%] bg-white p-3 rounded-[1.2rem] shadow-2xl border border-gray-100 w-44 pointer-events-auto hover:z-30 transition-transform duration-300"
+                        className="absolute left-[2%] top-[25%] bg-white p-3 rounded-[1.2rem] shadow-2xl border border-gray-100 w-44 pointer-events-auto hover:z-30 transition-transform duration-300 will-change-transform"
                     >
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center text-brand-purple font-bold text-xs">Ui</div>
@@ -175,7 +175,7 @@ const Hero = () => {
                             duration: 0.8,
                             y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
                         }}
-                        className="absolute right-[12%] top-[18%] bg-white p-3 rounded-[1.2rem] shadow-2xl border border-gray-100 w-40 pointer-events-auto hover:z-30 transition-transform duration-300"
+                        className="absolute right-[12%] top-[18%] bg-white p-3 rounded-[1.2rem] shadow-2xl border border-gray-100 w-40 pointer-events-auto hover:z-30 transition-transform duration-300 will-change-transform"
                     >
                         <div className="bg-brand-yellow/10 rounded-xl p-3 h-20 flex items-center justify-center relative">
                             <Palette className="w-6 h-6 text-brand-orange" />
@@ -206,7 +206,7 @@ const Hero = () => {
                             duration: 0.8,
                             y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
                         }}
-                        className="absolute right-[5%] bottom-[8%] bg-white p-3 rounded-[1.5rem] shadow-2xl border border-gray-100 w-52 pointer-events-auto hover:z-30 transition-transform duration-300"
+                        className="absolute right-[5%] bottom-[8%] bg-white p-3 rounded-[1.5rem] shadow-2xl border border-gray-100 w-52 pointer-events-auto hover:z-30 transition-transform duration-300 will-change-transform"
                     >
                         <div className="h-32 rounded-lg bg-gradient-to-br from-brand-purple to-brand-orange flex items-center justify-center mb-3 shadow-md relative group overflow-hidden">
                             <Layout className="w-8 h-8 text-white/90" />
