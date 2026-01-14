@@ -47,27 +47,31 @@ const Stack = () => {
                     {tools.map((tool, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{
-                                delay: index * 0.03,
-                                duration: 0.5,
-                                ease: "easeOut"
+                                delay: index * 0.05,
+                                duration: 0.6,
+                                ease: [0.16, 1, 0.3, 1]
                             }}
                             whileHover={{
-                                y: -10,
-                                scale: 1.02,
-                                transition: { duration: 0.3 }
+                                y: -12,
+                                scale: 1.05,
+                                rotate: index % 2 === 0 ? 2 : -2,
+                                transition: { duration: 0.4, ease: "easeOut" }
                             }}
-                            className="group relative p-8 rounded-[2.5rem] bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-5 will-change-transform"
+                            className="group relative p-8 rounded-[2.5rem] bg-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.12)] transition-all duration-500 cursor-pointer flex flex-col items-center justify-center gap-5 will-change-transform border border-transparent hover:border-gray-100"
                         >
-                            <div className={`w-16 h-16 rounded-2xl ${tool.bgColor} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                            <div className={`w-16 h-16 rounded-2xl ${tool.bgColor} flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-sm`}>
                                 <div className="relative w-8 h-8 flex items-center justify-center">
-                                    <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" loading="lazy" />
+                                    <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy" />
                                 </div>
                             </div>
-                            <span className="font-bold text-gray-800 tracking-tight text-base">{tool.name}</span>
+                            <span className="font-black text-gray-800 tracking-tight text-sm uppercase opacity-60 group-hover:opacity-100 transition-opacity duration-500">{tool.name}</span>
+
+                            {/* Card Glow Effect */}
+                            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-[2.5rem] pointer-events-none" />
                         </motion.div>
                     ))}
                 </div>

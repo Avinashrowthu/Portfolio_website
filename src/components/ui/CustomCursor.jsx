@@ -5,42 +5,89 @@ const CustomCursor = () => {
     const mouseX = useMotionValue(-100);
     const mouseY = useMotionValue(-100);
     const [isHovering, setIsHovering] = useState(false);
+    const [isPressed, setIsPressed] = useState(false);
 
-    const springConfig = { damping: 25, stiffness: 400, mass: 0.5 };
-    const x = useSpring(mouseX, springConfig);
-    const y = useSpring(mouseY, springConfig);
+    const springConfig = { damping: 30, stiffness: 500, mass: 0.5 };
+    const ringConfig = { damping: 20, stiffness: 300, mass: 0.5 };
+
+    const dotX = useSpring(mouseX, springConfig);
+    const dotY = useSpring(mouseY, springConfig);
+
+    const ringX = useSpring(mouseX, ringConfig);
+    const ringY = useSpring(mouseY, ringConfig);
 
     useEffect(() => {
         const updateMousePosition = (e) => {
-            mouseX.set(e.clientX - 16);
-            mouseY.set(e.clientY - 16);
+            mouseX.set(e.clientX);
+            mouseY.set(e.clientY);
         };
 
+        const handleMouseDown = () => setIsPressed(true);
+        const handleMouseUp = () => setIsPressed(false);
+
         const handleMouseOver = (e) => {
-            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.cursor-pointer')) {
-                setIsHovering(true);
-            } else {
-                setIsHovering(false);
-            }
+            const target = e.target;
+            const isClickable = target.closest('a') ||
+                target.closest('button') ||
+                target.closest('.cursor-pointer') ||
+                window.getComputedStyle(target).cursor === 'pointer';
+
+            setIsHovering(!!isClickable);
         };
 
         window.addEventListener('mousemove', updateMousePosition);
+        window.addEventListener('mousedown', handleMouseDown);
+        window.addEventListener('mouseup', handleMouseUp);
         window.addEventListener('mouseover', handleMouseOver);
 
         return () => {
             window.removeEventListener('mousemove', updateMousePosition);
+            window.removeEventListener('mousedown', handleMouseDown);
+            window.removeEventListener('mouseup', handleMouseUp);
             window.removeEventListener('mouseover', handleMouseOver);
         };
     }, []);
 
     return (
-        <motion.div
-            className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-brand-orange bg-brand-orange/20 pointer-events-none z-[9999] hidden md:block mix-blend-difference"
-            style={{ x, y, scale: isHovering ? 1.5 : 1 }}
-        >
-            <div className="w-2 h-2 bg-brand-orange rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-        </motion.div>
+        <>
+            {/* Main Ring */}
+            <motion.div
+                className="fixed top-0 left-0 w-10 h-10 border border-brand-purple rounded-full pointer-events-none z-[9999] hidden md:block mix-blend-difference"
+                style={{
+                    x: ringX,
+                    y: ringY,
+                    translateX: '-50%',
+                    translateY: '-50%',
+                    scale: isHovering ? 2 : isPressed ? 0.8 : 1,
+                    opacity: isHovering ? 0.5 : 1,
+                }}
+                transition={{ type: 'spring', ...ringConfig }}
+            />
+            {/* Inner Dot */}
+            <motion.div
+                className="fixed top-0 left-0 w-1.5 h-1.5 bg-brand-purple rounded-full pointer-events-none z-[9999] hidden md:block mix-blend-difference"
+                style={{
+                    x: dotX,
+                    y: dotY,
+                    translateX: '-50%',
+                    translateY: '-50%',
+                }}
+            />
+            {/* Hover Expansion Effect */}
+            <motion.div
+                className="fixed top-0 left-0 w-20 h-20 bg-brand-purple/10 rounded-full pointer-events-none z-[9998] hidden md:block blur-xl"
+                style={{
+                    x: ringX,
+                    y: ringY,
+                    translateX: '-50%',
+                    translateY: '-50%',
+                    scale: isHovering ? 1.2 : 0,
+                    opacity: isHovering ? 0.4 : 0,
+                }}
+            />
+        </>
     );
 };
 
 export default CustomCursor;
+

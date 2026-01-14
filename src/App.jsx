@@ -1,34 +1,29 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import CustomCursor from './components/ui/CustomCursor';
-import Footer from './components/layout/Footer';
-import Home from './pages/Home';
-import Navbar from './components/layout/Navbar';
-import Preloader from './components/layout/Preloader';
+import Layout from './components/layout/Layout';
+
+// Lazy load pages for better performance (Code Splitting)
+const Home = lazy(() => import('./pages/Home'));
+const ProjectDetails = lazy(() => import('./pages/ProjectDetails'));
+
+// Loading fallback for lazy routes
+const PageLoader = () => (
+    <div className="min-h-screen flex items-center justify-center bg-brand-bg">
+        <div className="w-10 h-10 border-4 border-brand-orange border-t-transparent rounded-full animate-spin"></div>
+    </div>
+);
 
 function App() {
-    const [loading, setLoading] = useState(true);
-
     return (
         <Router>
-            <div className={`min-h-screen bg-brand-bg text-brand-text selection:bg-brand-orange selection:text-white ${loading ? 'cursor-wait' : ''}`}>
-                <AnimatePresence mode='wait'>
-                    {loading && <Preloader onComplete={() => setLoading(false)} key="preloader" />}
-                </AnimatePresence>
-
-                {!loading && (
-                    <>
-                        <CustomCursor />
-                        <Navbar />
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                        </Routes>
-                        <Footer />
-                    </>
-                )}
-            </div>
-
+            <Layout>
+                <Suspense fallback={<PageLoader />}>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/project/:id" element={<ProjectDetails />} />
+                    </Routes>
+                </Suspense>
+            </Layout>
         </Router>
     );
 }

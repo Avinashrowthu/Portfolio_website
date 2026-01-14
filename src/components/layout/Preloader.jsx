@@ -39,7 +39,7 @@ const Preloader = ({ onComplete }) => {
                         Avinash Naidu<span className="text-brand-purple">.</span>
                     </h1>
                     <span className="text-2xl md:text-3xl font-light font-mono text-gray-400">
-                        {progress}%
+                        {Math.round(progress)}%
                     </span>
                 </div>
 
