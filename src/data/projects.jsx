@@ -44,6 +44,9 @@ import rd4 from '../assets/projects/restaurant-dashboard/4.png';
 import rd5 from '../assets/projects/restaurant-dashboard/5.png';
 import rd6 from '../assets/projects/restaurant-dashboard/6.png';
 
+// Parallax Effect Image
+import parallaxThumb from '../assets/parallax-thumb.png';
+
 export const projects = [
     {
         id: "restaurant-dashboard",
@@ -72,6 +75,20 @@ export const projects = [
         // Using the user-provided Figma prototype URL
         prototypeUrl: "https://www.figma.com/proto/KIpfT5DqoQTVI4tM2oaeca/Untitled?page-id=1%3A7&node-id=35%3A169&viewport=-346%2C-725%2C0.31&scaling=contain",
         longDescription: "The Spotlight Effect is a powerful UI pattern used to focus user attention on specific elements while dimming the surroundings. This project in Figma explores how to build this interaction using Smart Animate and component properties, making it reusable and smooth for any web or mobile interface."
+    },
+    {
+        id: "parallax-effect",
+        title: "Parallax Effect",
+        category: "Prototyping",
+        description: "An immersive scrolling experience that creates depth and motion using parallax principles in Figma.",
+        tags: ["Figma", "Smart Animate", "Motion Design"],
+        color: "bg-[#0B0C15]", // Dark navy to match the space theme
+        textColor: "text-white",
+        icon: <Globe size={24} />,
+        span: "md:col-span-1",
+        prototypeUrl: "https://www.figma.com/proto/KIpfT5DqoQTVI4tM2oaeca/Untitled?page-id=1%3A18&node-id=204%3A11150&viewport=475%2C361%2C0.19&scaling=scale-down&starting-point-node-id=204%3A11150",
+        longDescription: "This project explores the power of Parallax Scrolling to create a sense of depth and immersion in web interfaces. By moving background and foreground elements at different speeds, the user experiences a 3D effect that brings the narrative to life. The high-fidelity Figma prototype demonstrates smooth transitions and responsive scaling.",
+        thumbnail: parallaxThumb
     },
     {
         id: "basket-blitz",
@@ -137,4 +154,6 @@ export const projects = [
         icon: <Layout size={24} />,
         span: "md:col-span-2"
     }
+
+
 ];

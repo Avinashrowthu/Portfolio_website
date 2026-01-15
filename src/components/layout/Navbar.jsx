@@ -70,16 +70,24 @@ const Navbar = () => {
 
                         {/* CTA */}
                         <div className="hidden md:flex items-center gap-2 lg:gap-3">
-                            <Button
-                                className="rounded-full border-2 border-brand-yellow bg-transparent text-brand-dark px-6 hover:bg-brand-yellow hover:text-brand-dark transition-all duration-300 flex items-center gap-2 font-bold group/resume"
+                            <a
+                                href="https://www.linkedin.com/in/avinash-designer/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <Download className="w-4 h-4 group-hover/resume:-translate-y-1 transition-transform" />
-                                Resume
-                            </Button>
+                                <Button
+                                    className="rounded-full border-2 border-brand-yellow bg-transparent text-brand-dark px-6 hover:bg-brand-yellow hover:text-brand-dark transition-all duration-300 flex items-center gap-2 font-bold group/resume"
+                                >
+                                    <Download className="w-4 h-4 group-hover/resume:-translate-y-1 transition-transform" />
+                                    Resume
+                                </Button>
+                            </a>
 
-                            <Button className="rounded-full bg-brand-orange text-white hover:bg-brand-dark transition-colors shadow-lg shadow-brand-orange/20 hover:shadow-brand-dark/30">
-                                Let's Talk <ArrowRight className="ml-2 w-4 h-4" />
-                            </Button>
+                            <a href="mailto:rowthuavinash@gmail.com">
+                                <Button className="rounded-full bg-brand-orange text-white hover:bg-brand-dark transition-colors shadow-lg shadow-brand-orange/20 hover:shadow-brand-dark/30">
+                                    Let's Talk <ArrowRight className="ml-2 w-4 h-4" />
+                                </Button>
+                            </a>
                         </div>
 
                         {/* Mobile Toggle */}

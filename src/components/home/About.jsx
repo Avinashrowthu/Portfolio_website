@@ -30,7 +30,7 @@ const About = () => {
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray/50 mb-6">
                             <span className="w-2 h-2 rounded-full bg-brand-dark"></span>
-                            <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">About Me</span>
+                            <h2 className="text-sm font-bold text-gray-600 uppercase tracking-wider m-0">About Me</h2>
                         </div>
 
                         <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-medium">

@@ -111,12 +111,16 @@ const Hero = () => {
                         transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        <Button size="xl" className="rounded-full bg-brand-orange text-white px-10 py-4 text-lg font-bold hover:bg-brand-dark transition-all shadow-xl shadow-brand-orange/20 hover:shadow-brand-dark/30 hover:-translate-y-1 active:scale-95">
-                            View My Work
-                        </Button>
-                        <Button size="xl" variant="outline" className="rounded-full border-2 border-gray-200 bg-white px-10 py-4 text-lg font-bold hover:border-brand-yellow hover:text-brand-yellow hover:bg-brand-yellow/5 transition-all active:scale-95">
-                            Contact Me
-                        </Button>
+                        <a href="#work">
+                            <Button size="xl" className="rounded-full bg-brand-orange text-white px-10 py-4 text-lg font-bold hover:bg-brand-dark transition-all shadow-xl shadow-brand-orange/20 hover:shadow-brand-dark/30 hover:-translate-y-1 active:scale-95">
+                                View My Work
+                            </Button>
+                        </a>
+                        <a href="mailto:rowthuavinash@gmail.com">
+                            <Button size="xl" variant="outline" className="rounded-full border-2 border-gray-200 bg-white px-10 py-4 text-lg font-bold hover:border-brand-yellow hover:text-brand-yellow hover:bg-brand-yellow/5 transition-all active:scale-95">
+                                Contact Me
+                            </Button>
+                        </a>
                     </motion.div>
                 </div>
 

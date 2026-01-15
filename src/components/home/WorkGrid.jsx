@@ -34,7 +34,7 @@ const WorkGrid = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[320px] gap-8">
-                    {projects.filter(p => p.id !== 'spotlight-effect').map((project, index) => (
+                    {projects.filter(p => p.id !== 'spotlight-effect' && p.id !== 'parallax-effect').map((project, index) => (
                         <motion.div
                             key={project.id}
                             layoutId={`project-card-${index}`}
@@ -60,7 +60,7 @@ const WorkGrid = () => {
                                 <div className="absolute inset-0 z-0 overflow-hidden">
                                     <img
                                         src={project.thumbnail}
-                                        alt=""
+                                        alt={`${project.title} - ${project.category} - UX/UI Design Project`}
                                         className="w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 scale-125 group-hover:scale-100 transition-all duration-[1.5s] ease-out filter brightness-[0.85] contrast-[1.1]"
                                     />
                                     {/* Multi-layered Vignette */}

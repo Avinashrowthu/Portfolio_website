@@ -1,16 +1,27 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Linkedin, Dribbble, Globe, ArrowUpRight, Github, ArrowUp } from 'lucide-react';
+import { Mail, Instagram, Linkedin, Globe, ArrowUpRight, ArrowUp } from 'lucide-react';
 import { Button } from '../ui/Button';
+
+const Behance = ({ size = 24, className }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M7.78 12.049C7.29 12.28 6.94 12.67 6.94 13.56C6.94 14.59 7.73 15.11 8.78 15.11C9.64 15.11 10.19 14.7 10.38 13.98H11.87C11.64 15.42 10.45 16.27 8.78 16.27C6.46 16.27 5.3 +14.93 5.3 +13.06C+5.3 +11.23 +6.5 +9.81 +8.66 +9.81C10.51 +9.81 +11.75 +10.97 +11.75 +12.05H7.78V12.049ZM7.8 11.1H10.44C10.36 10.74 9.94 10.63 8.74 10.63C7.94 10.63 7.8 10.91 7.8 11.1ZM16.32 12.64H13.62V13.84H16.32V12.64ZM13.62 16.27H15.06V14.71H16.32V16.27H17.76V11.45H13.62V16.27ZM13.62 9.81H17.76V10.84H13.62V9.81Z" />
+    </svg>
+);
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { label: 'Instagram', icon: <Instagram size={20} />, href: '#', color: 'hover:bg-[#E1306C] hover:text-white' },
-        { label: 'LinkedIn', icon: <Linkedin size={20} />, href: '#', color: 'hover:bg-[#0077b5] hover:text-white' },
-        { label: 'Dribbble', icon: <Dribbble size={20} />, href: '#', color: 'hover:bg-[#ea4c89] hover:text-white' },
-        { label: 'GitHub', icon: <Github size={20} />, href: '#', color: 'hover:bg-white hover:text-brand-dark' },
+        { label: 'Instagram', icon: <Instagram size={20} />, href: 'https://www.instagram.com/__mr_avi___/', color: 'hover:bg-[#E1306C] hover:text-white' },
+        { label: 'LinkedIn', icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/avinash-designer/', color: 'hover:bg-[#0077b5] hover:text-white' },
+        { label: 'Behance', icon: <Behance size={20} />, href: 'https://www.behance.net/avinashrowthu', color: 'hover:bg-[#1769ff] hover:text-white' },
     ];
 
     const scrollToTop = () => {
@@ -42,14 +53,14 @@ const Footer = () => {
 
                         <div className="flex flex-col lg:flex-row items-center gap-6 mt-12">
                             <motion.a
-                                href="mailto:hello@avinash.design"
+                                href="mailto:rowthuavinash@gmail.com"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="group relative bg-white text-brand-dark px-6 py-4 md:px-8 md:py-6 rounded-2xl md:rounded-[1.5rem] text-lg md:text-2xl font-black flex items-center gap-3 hover:shadow-[0_20px_50px_rgba(255,121,63,0.2)] transition-all duration-500 w-full md:w-auto overflow-hidden text-center md:text-left justify-center md:justify-start"
                             >
                                 <div className="absolute inset-0 bg-brand-orange translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500"></div>
                                 <Mail className="w-6 h-6 md:w-7 md:h-7 relative z-10 group-hover:text-white transition-colors duration-500" />
-                                <span className="relative z-10 group-hover:text-white transition-colors duration-500">hello@avinash.design</span>
+                                <span className="relative z-10 group-hover:text-white transition-colors duration-500">rowthuavinash@gmail.com</span>
                                 <div className="relative z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-blue flex items-center justify-center text-white transition-all duration-500 group-hover:bg-white group-hover:text-brand-orange">
                                     <ArrowUpRight size={20} />
                                 </div>

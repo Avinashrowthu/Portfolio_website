@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink, Maximize2 } from 'lucide-react';
 import { projects } from '../data/projects';
 import FigmaEmbed from '../components/ui/FigmaEmbed';
 import { Button } from '../components/ui/Button';
+import SEO from '../components/SEO';
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -28,6 +29,26 @@ const ProjectDetails = () => {
 
     return (
         <main className="min-h-screen pt-32 pb-20 px-6 md:px-12 lg:px-20 bg-brand-bg">
+            <SEO
+                title={`${project.title} – UX/UI Case Study`}
+                description={project.description}
+                keywords={`${project.title}, ${project.category}, UX Case Study, ${project.tags.join(', ')}`}
+                // Note: project.thumbnail is an imported asset string, usually starting with /assets
+                image={project.thumbnail}
+                url={`/project/${project.id}`}
+                type="article"
+                schema={{
+                    "@context": "https://schema.org",
+                    "@type": "CreativeWork",
+                    "headline": project.title,
+                    "description": project.description,
+                    "author": {
+                        "@type": "Person",
+                        "name": "Avinash Naidu"
+                    },
+                    "keywords": project.tags.join(', ')
+                }}
+            />
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <motion.div

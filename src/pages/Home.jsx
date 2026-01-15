@@ -7,9 +7,22 @@ import Gallery from '../components/home/Gallery';
 import Features from '../components/home/Features';
 import HowItWorks from '../components/home/HowItWorks';
 import { useLocation } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Home = () => {
     const { hash } = useLocation();
+
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Avinash Naidu",
+        "url": "https://avinashnaidu.com",
+        "jobTitle": "UX/UI Designer",
+        "sameAs": [
+            "https://www.linkedin.com/in/avinash-rowthu-134371190/",
+            "https://www.behance.net/avinashrowthu"
+        ]
+    };
 
     useEffect(() => {
         // Prevent browser from restoring scroll position
@@ -33,6 +46,11 @@ const Home = () => {
 
     return (
         <main className="overflow-hidden">
+            <SEO
+                title="UX/UI Designer & Product Designer Portfolio"
+                description="Senior UX/UI Designer & Product Designer based in India. Specializing in SaaS, Dashboard Design, and user-centric digital products. View my portfolio."
+                schema={personSchema}
+            />
             <Hero />
             <About />
             <Stack />

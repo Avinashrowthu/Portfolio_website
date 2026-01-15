@@ -11,7 +11,7 @@ const SectionHeading = ({
     className = ""
 }) => {
     return (
-        <motion.div
+        <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -45,7 +45,7 @@ const SectionHeading = ({
                     </svg>
                 </motion.div>
             </div>
-        </motion.div>
+        </motion.h2>
     );
 };
 

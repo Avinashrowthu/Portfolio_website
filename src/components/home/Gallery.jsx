@@ -33,11 +33,15 @@ const GalleryItem = ({ img, index }) => (
     >
         <motion.div
             className="relative group rounded-[2rem] overflow-hidden shadow-2xl bg-white p-2 border border-white/50"
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            whileHover={!img.embed ? { y: -10, transition: { duration: 0.3 } } : {}}
             style={{ rotate: img.rotate }}
         >
-            <div className={`rounded-[1.5rem] overflow-hidden relative ${img.projectId ? 'cursor-pointer' : ''}`}>
-                {img.projectId ? (
+            <div className={`rounded-[1.5rem] overflow-hidden relative ${img.src || img.embed ? 'aspect-[4/3] md:aspect-auto' : ''} ${img.projectId && !img.embed ? 'cursor-pointer' : ''}`}>
+                {img.embed ? (
+                    <div className="w-full h-full min-h-[250px] md:min-h-[300px]">
+                        {img.embed}
+                    </div>
+                ) : img.projectId ? (
                     <Link to={`/project/${img.projectId}`}>
                         <img
                             src={img.src}
@@ -79,18 +83,30 @@ const Gallery = () => {
     const yCenter = useSpring(useTransform(scrollYProgress, [0, 1], [0, 150]), { stiffness: 50, damping: 20 });
     const yRight = useSpring(useTransform(scrollYProgress, [0, 1], [0, -100]), { stiffness: 50, damping: 20 });
 
-    // Integrate Spotlight Effect project into the gallery
+    // Integrate specific projects into the gallery
     const spotlightProject = projects.find(p => p.id === 'spotlight-effect');
+    const parallaxProject = projects.find(p => p.id === 'parallax-effect');
 
-    // Create a modified images array that includes the spotlight project
-    // We'll replace the 2nd image (index 1) with the spotlight project for prominent visibility
+    // Create a modified images array that includes the projects
     const galleryImages = [...images];
+
+    // Inject Spotlight Effect (Thumbnail based)
     if (spotlightProject) {
         galleryImages[1] = {
             src: spotlightThumb,
             rotate: '-3deg',
             projectId: spotlightProject.id,
             alt: spotlightProject.title
+        };
+    }
+
+    // Inject Parallax Effect (Thumbnail based) - First Image
+    if (parallaxProject && parallaxProject.thumbnail) {
+        galleryImages[0] = {
+            src: parallaxProject.thumbnail,
+            rotate: '2deg',
+            projectId: parallaxProject.id,
+            alt: parallaxProject.title
         };
     }
 

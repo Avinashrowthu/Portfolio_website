@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/layout/Layout';
 
 // Lazy load pages for better performance (Code Splitting)
@@ -15,16 +16,18 @@ const PageLoader = () => (
 
 function App() {
     return (
-        <Router>
-            <Layout>
-                <Suspense fallback={<PageLoader />}>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/project/:id" element={<ProjectDetails />} />
-                    </Routes>
-                </Suspense>
-            </Layout>
-        </Router>
+        <HelmetProvider>
+            <Router>
+                <Layout>
+                    <Suspense fallback={<PageLoader />}>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/project/:id" element={<ProjectDetails />} />
+                        </Routes>
+                    </Suspense>
+                </Layout>
+            </Router>
+        </HelmetProvider>
     );
 }
 
