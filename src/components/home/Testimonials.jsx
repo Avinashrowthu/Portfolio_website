@@ -86,7 +86,7 @@ const Testimonials = () => {
                         <SectionHeading
                             title1="Client"
                             title2="Kind Words"
-                            title1Color="bg-brand-gray"
+                            title1Color="bg-brand-yellow"
                             textColor1="text-brand-dark"
                         />
                     </div>
@@ -117,18 +117,19 @@ const Testimonials = () => {
                             }}
                             viewport={{ once: true }}
                             transition={{
-                                duration: 0.7,
+                                duration: 0.8,
                                 delay: index * 0.1,
-                                ease: [0.22, 1, 0.36, 1]
+                                ease: [0.16, 1, 0.3, 1]
                             }}
                             whileHover={{
-                                y: -20,
-                                scale: 1.05,
+                                y: testi.y - 20,
+                                scale: 1.02,
                                 rotate: 0,
                                 zIndex: 100,
-                                transition: { duration: 0.3 }
+                                boxShadow: "0 40px 80px rgba(0,0,0,0.1)",
+                                transition: { duration: 0.3, ease: "easeOut" }
                             }}
-                            className="absolute w-[280px] md:w-[320px] bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] transition-all hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] cursor-pointer flex flex-col group backdrop-blur-sm bg-white/90"
+                            className="absolute w-[280px] md:w-[320px] bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] cursor-pointer flex flex-col group backdrop-blur-sm bg-white/90 will-change-transform"
                             style={{ zIndex: index }}
                         >
                             {/* Card Header */}

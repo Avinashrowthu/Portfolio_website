@@ -27,6 +27,13 @@ const Preloader = ({ onComplete }) => {
         }
     }, [progress, onComplete]);
 
+    const loadingMessages = [
+        "Setting the stage...",
+        "Bringing ideas to life..."
+    ];
+
+    const currentMessage = loadingMessages[Math.min(Math.floor(progress / 50), loadingMessages.length - 1)];
+
     return (
         <motion.div
             className="fixed inset-0 z-[100] bg-brand-dark flex flex-col justify-center items-center text-white"
@@ -38,7 +45,7 @@ const Preloader = ({ onComplete }) => {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
                         Avinash Naidu<span className="text-brand-purple">.</span>
                     </h1>
-                    <span className="text-2xl md:text-3xl font-light font-mono text-gray-400">
+                    <span className="text-2xl md:text-3xl font-light font-mono text-gray-400 w-24 text-right">
                         {Math.round(progress)}%
                     </span>
                 </div>
@@ -52,9 +59,16 @@ const Preloader = ({ onComplete }) => {
                     />
                 </div>
 
-                <div className="mt-4 flex justify-between text-sm text-gray-500 font-mono">
-                    <span>Loading Experience</span>
-                    <span>High Fidelity Mode</span>
+                <div className="mt-4 flex justify-between text-[11px] uppercase tracking-widest text-gray-500 font-mono">
+                    <motion.span
+                        key={currentMessage}
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-brand-purple font-bold"
+                    >
+                        {currentMessage}
+                    </motion.span>
+                    <span className="animate-pulse">Articulating Vision</span>
                 </div>
             </div>
         </motion.div>

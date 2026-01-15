@@ -19,7 +19,7 @@ const WorkGrid = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div className="text-left">
-                        <SectionHeading title1="Selected" title2="Works" className="mb-4" title1Color="bg-brand-gray" textColor1="text-brand-dark" />
+                        <SectionHeading title1="Selected" title2="Works" className="mb-4" title1Color="bg-brand-yellow" textColor1="text-brand-dark" />
                     </div>
 
                     <motion.p
