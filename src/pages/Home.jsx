@@ -6,6 +6,7 @@ import WorkGrid from '../components/home/WorkGrid';
 import Gallery from '../components/home/Gallery';
 import Features from '../components/home/Features';
 import HowItWorks from '../components/home/HowItWorks';
+import Testimonials from '../components/home/Testimonials';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 
@@ -53,11 +54,11 @@ const Home = () => {
             />
             <Hero />
             <About />
-            <Stack />
             <WorkGrid />
             <Gallery />
             <Features />
-            <HowItWorks />
+            {/* <HowItWorks /> */}
+            <Testimonials />
         </main>
     );
 };

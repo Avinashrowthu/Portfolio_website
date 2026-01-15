@@ -13,12 +13,29 @@ const About = () => {
         { icon: <Layers className="w-5 h-5" />, label: "Developer Handoff", color: "bg-brand-purple/10 text-brand-purple" },
     ];
 
+    const tools = [
+        { name: 'Figma', icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg' },
+        { name: 'Sketch', icon: 'https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg' },
+        { name: 'Adobe XD', icon: 'https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg' },
+        { name: 'Adobe Illustrator', icon: 'https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg' },
+        { name: 'Adobe Photoshop', icon: 'https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg' },
+        { name: 'Adobe After Effects', icon: 'https://skillicons.dev/icons?i=ae' },
+        { name: 'FigJam', icon: 'https://skillicons.dev/icons?i=figma' },
+        { name: 'Miro', icon: 'https://cdn.worldvectorlogo.com/logos/miro-2.svg' },
+        { name: 'HTML5', icon: 'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg' },
+        { name: 'CSS3', icon: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg' },
+        { name: 'React.js', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg' },
+        { name: 'Framer', icon: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg' },
+    ];
+
+    // No need for marqueeTools with the new double row strategy
+
     return (
-        <section className="relative py-24 bg-white overflow-hidden" id="about">
+        <section className="relative pt-20 bg-white overflow-hidden" id="about">
             {/* Background Decoration */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gray-50 rounded-full blur-3xl -z-10 opacity-60 translate-x-1/3 -translate-y-1/3"></div>
 
-            <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20">
+            <div className="max-w-[1400px] mx-auto px-6 sm:px-12 lg:px-20 mb-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                     {/* Left Column: Copy */}
@@ -92,6 +109,45 @@ const About = () => {
                     </motion.div>
 
                 </div>
+            </div>
+
+            {/* Tech Stack - Single Sliding Row */}
+            <div className="w-full overflow-hidden relative mt-12 pb-12">
+                <div className="text-center mb-12">
+                    <p className="text-gray-400 text-xs md:text-sm tracking-[0.3em] font-bold uppercase">Technical Arsenal</p>
+                </div>
+
+                {/* Gradient Masks */}
+                <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 z-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 z-20 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+
+                {/* Row 1: Sliding Left */}
+                <motion.div
+                    className="flex w-max items-center gap-6 md:gap-8 will-change-transform"
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{
+                        x: {
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            duration: 40,
+                            ease: "linear",
+                        },
+                    }}
+                >
+                    {[...tools, ...tools, ...tools].map((tool, index) => (
+                        <div
+                            key={`row1-${index}`}
+                            className="group relative w-20 h-20 md:w-24 md:h-24 bg-white rounded-[1.5rem] md:rounded-[2rem] border border-gray-100/50 shadow-[0_20px_50px_rgba(0,0,0,0.12)] flex items-center justify-center hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.18)] transition-all duration-300"
+                        >
+                            <img
+                                src={tool.icon}
+                                alt={tool.name}
+                                className="w-10 h-10 md:w-12 md:h-12 object-contain transition-all duration-300 scale-90 group-hover:scale-110"
+                                loading="lazy"
+                            />
+                        </div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );
