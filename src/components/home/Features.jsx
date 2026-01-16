@@ -1,12 +1,11 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     Palette,
     Layout,
     PenTool,
     Code,
-    Layers,
-    Sparkles
+    Layers
 } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 
@@ -23,21 +22,18 @@ const expertise = [
         color: "bg-indigo-50 text-indigo-500",
         description: "Making products easy to use by improving flows, structure, and usability."
     },
-
     {
         title: "Prototyping",
         icon: <Layers className="w-5 h-5 md:w-6 md:h-6" />,
         color: "bg-blue-50 text-blue-500",
         description: "Creating clickable designs to show how a product works before development."
     },
-
     {
         title: "Front-End Development",
         icon: <Code className="w-5 h-5 md:w-6 md:h-6" />,
         color: "bg-emerald-50 text-emerald-500",
         description: "Building responsive websites using HTML, CSS, JavaScript, and React.js."
     },
-
     {
         title: "Graphic Design",
         icon: <PenTool className="w-5 h-5 md:w-6 md:h-6" />,
@@ -57,7 +53,7 @@ const Features = () => {
                 right: 0
             });
         }
-    }, []);
+    }, [carouselRef.current?.scrollWidth]);
 
     return (
         <section id="expertise" className="py-24 bg-brand-bg relative overflow-hidden">
@@ -96,11 +92,42 @@ const Features = () => {
                 </div>
             </div>
 
-            {/* Carousel Container with Drag */}
-            <div className="relative w-full">
+            {/* Mobile/Tablet Support: Only applies for small/medium screens */}
+            <div className="relative w-full lg:hidden overflow-x-auto no-scrollbar px-6 sm:px-12 pb-8 flex gap-6 snap-x snap-mandatory">
+                {expertise.map((item, index) => (
+                    <motion.div
+                        key={`mobile-${index}`}
+                        className="flex-shrink-0 w-[240px] md:w-[280px] snap-center"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.05 }}
+                    >
+                        <div className="h-full bg-white rounded-[1.8rem] p-6 md:p-8 border border-gray-100/80 shadow-[0_10px_30px_rgba(0,0,0,0.02)] flex flex-col items-center text-center">
+                            <span className="absolute -top-1 -right-1 text-4xl font-black text-gray-50/50 italic select-none">
+                                {index + 1}
+                            </span>
+                            <div className="relative mb-6 z-10">
+                                <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center ${item.color} shadow-inner`}>
+                                    {item.icon}
+                                </div>
+                            </div>
+                            <h3 className="text-lg font-bold text-brand-dark tracking-tight mb-3">
+                                {item.title}
+                            </h3>
+                            <p className="text-[13px] text-gray-400 font-medium leading-[1.5]">
+                                {item.description}
+                            </p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop Carousel Container with Drag: Only for LARGE screens */}
+            <div className="relative w-full hidden lg:block overflow-visible">
                 <motion.div
                     ref={carouselRef}
-                    className="flex gap-6 px-6 sm:px-12 lg:px-20 cursor-grab active:cursor-grabbing"
+                    className="flex gap-6 px-20 cursor-grab active:cursor-grabbing"
                     drag="x"
                     dragConstraints={constraints}
                     dragElastic={0.1}
@@ -108,46 +135,38 @@ const Features = () => {
                 >
                     {expertise.map((item, index) => (
                         <motion.div
-                            key={index}
-                            className="flex-shrink-0 w-[240px] md:w-[280px]"
+                            key={`desktop-${index}`}
+                            className="flex-shrink-0 w-[280px]"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.05 }}
                         >
-                            <div className="h-full bg-white rounded-[1.8rem] p-6 md:p-8 border border-gray-100/80 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.05)] transition-all duration-500 group relative overflow-hidden flex flex-col items-center text-center">
-                                {/* Large Index Number */}
+                            <div className="h-full bg-white rounded-[1.8rem] p-8 border border-gray-100/80 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.05)] transition-all duration-500 group relative overflow-hidden flex flex-col items-center text-center">
                                 <span className="absolute -top-1 -right-1 text-6xl font-black text-gray-50/50 group-hover:text-brand-yellow/5 transition-colors duration-500 italic select-none">
                                     {index + 1}
                                 </span>
-
-                                {/* Icon Container */}
                                 <div className="relative mb-6 z-10">
                                     <div className={`absolute inset-0 blur-2xl opacity-10 group-hover:opacity-30 transition-opacity duration-500 ${item.color.split(' ')[0]}`} />
-                                    <div className={`relative w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center ${item.color} shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3`}>
+                                    <div className={`relative w-14 h-14 rounded-xl flex items-center justify-center ${item.color} shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3`}>
                                         {item.icon}
                                     </div>
                                 </div>
-
                                 <div className="relative z-10">
                                     <h3 className="text-lg font-bold text-brand-dark tracking-tight mb-3 group-hover:text-brand-purple transition-colors duration-500">
                                         {item.title}
                                     </h3>
-
                                     <p className="text-[13px] text-gray-400 font-medium leading-[1.5] group-hover:text-gray-500 transition-colors duration-500">
                                         {item.description}
                                     </p>
                                 </div>
-
                                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-brand-yellow group-hover:w-full transition-all duration-500" />
                             </div>
                         </motion.div>
                     ))}
                 </motion.div>
-
-                {/* Visual Fades */}
-                <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-brand-bg to-transparent pointer-events-none hidden lg:block" />
-                <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-brand-bg to-transparent pointer-events-none hidden lg:block" />
+                <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-brand-bg to-transparent pointer-events-none" />
+                <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-brand-bg to-transparent pointer-events-none" />
             </div>
         </section>
     );

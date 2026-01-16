@@ -58,7 +58,7 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section id="testimonials" className="py-20 bg-white text-brand-dark overflow-hidden relative flex flex-col items-center">
+        <section id="testimonials" className="pt-20 bg-white text-brand-dark overflow-hidden relative flex flex-col items-center">
             {/* Themed Background */}
             <div className="absolute inset-0 z-0">
                 {/* HD Dot Image Pattern */}
@@ -102,12 +102,38 @@ const Testimonials = () => {
                 </div>
             </div>
 
-            {/* Horizontal Scroll/Wide Container */}
-            <div className="relative w-full overflow-visible flex justify-center px-4">
-                <div className="relative w-full max-w-[1200px] h-[450px] flex justify-center items-center">
+            {/* Mobile/Tablet: Centered Stack (Visible only on small/medium screens) */}
+            <div className="flex lg:hidden flex-col gap-8 w-full mt-12 px-6 sm:px-12 relative z-10 max-w-4xl">
+                {testimonials.map((testi, index) => (
+                    <motion.div
+                        key={`mobile-${index}`}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] flex flex-col"
+                    >
+                        <div className="flex justify-between items-start mb-6">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-gray/50 shadow-sm">
+                                    <img src={testi.avatar} alt={testi.name} className="w-full h-full object-cover" />
+                                </div>
+                                <span className="text-sm font-semibold text-gray-500">{testi.name}</span>
+                            </div>
+                            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">{testi.period}</span>
+                        </div>
+                        <h3 className="text-lg font-bold text-brand-dark mb-4 leading-tight">{testi.role}</h3>
+                        <p className="text-[13px] text-gray-400 leading-relaxed font-medium italic">"{testi.description}"</p>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop: Premium Interactive Fan Layout (Visible only on LARGE screens) */}
+            <div className="hidden lg:flex relative w-full overflow-visible justify-center px-4">
+                <div className="relative w-full max-w-[1200px] h-[600px] flex justify-center items-center">
                     {testimonials.map((testi, index) => (
                         <motion.div
-                            key={index}
+                            key={`desktop-${index}`}
                             initial={{ opacity: 0, y: 50, rotate: 0 }}
                             whileInView={{
                                 opacity: 1,
@@ -129,29 +155,29 @@ const Testimonials = () => {
                                 boxShadow: "0 40px 80px rgba(0,0,0,0.1)",
                                 transition: { duration: 0.3, ease: "easeOut" }
                             }}
-                            className="absolute w-[280px] md:w-[320px] bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] cursor-pointer flex flex-col group backdrop-blur-sm bg-white/90 will-change-transform"
+                            className="absolute w-[340px] bg-white rounded-[2rem] p-10 border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] cursor-pointer flex flex-col group backdrop-blur-sm bg-white/90 will-change-transform"
                             style={{ zIndex: index }}
                         >
                             {/* Card Header */}
                             <div className="flex justify-between items-start mb-6">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-gray/50 shadow-sm">
+                                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-gray/50 shadow-sm">
                                         <img
                                             src={testi.avatar}
                                             alt={testi.name}
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <span className="text-sm font-semibold text-gray-500">{testi.name}</span>
+                                    <span className="text-base font-semibold text-gray-500">{testi.name}</span>
                                 </div>
-                                <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">{testi.period}</span>
+                                <span className="text-[12px] font-semibold text-gray-400 uppercase tracking-wider">{testi.period}</span>
                             </div>
 
                             {/* Role Title */}
-                            <h3 className="text-lg font-bold text-brand-dark mb-4 leading-tight">{testi.role}</h3>
+                            <h3 className="text-xl font-bold text-brand-dark mb-4 leading-tight">{testi.role}</h3>
 
                             {/* Description */}
-                            <p className="text-[13px] text-gray-400 leading-relaxed font-medium">
+                            <p className="text-[15px] text-gray-400 leading-relaxed font-medium italic">
                                 "{testi.description}"
                             </p>
                         </motion.div>
